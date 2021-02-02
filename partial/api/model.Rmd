@@ -1,0 +1,219 @@
+---
+output: html_fragment
+---
+
+```{r setup_model, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F,results='asis')
+```
+
+
+```{r,}
+#
+suppressPackageStartupMessages(library(dave.help))
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome()) # required for icons
+
+
+```
+
+
+```{r}
+#DAVe modeling
+#-------------
+module<-'Predictive modeling'
+link_name<-'dave.model'
+
+  
+section_name<-NULL
+section_links<-inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+.path<-function(path,relative='../../'){
+  paste0(relative, path)
+}
+
+tmpath<-path<-.path('img/dave.model/')
+
+mod_description<-'Create and optimize machine learning models for classification and regression tasks.'
+fig_right<-FALSE
+
+#main preproc menue
+args_main<-list(title=module,
+    nav=paste0(path,'nav.png'),
+    mod_desc=as.character(mod_description),
+    section=NULL,
+    collapse='\n<br>\n',section_tags='')
+
+#----------
+# Train
+#----------
+path<-paste0(tmpath,'model/')
+link_name<-'dave.model.train.'
+section_links<-create_links(link_name)
+
+#calculate menue
+train_description<-'<code>Train</code> is used to fit, optimize and validate models.'
+
+#methods
+# section_name<-'methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="Selecting the type of model you would like to create <code>classification</code> or <code>regression</code> will toggle the available variables to predict. Use the filter menu <code>selected</code> to specify which variables should be included in the model based on criteria generated in other modules (e.g. statistical and feature selection).",
+                fig= paste0(path,'data_menue.png'),
+                fig_right=fig_right,4),
+              list(text="The <code>model</code> menu is used to specify a single or multiple models to fit to the data. The model hyperparameters can be automatically tuned based on <code>grid size</code> which defines the number or random setting to test. Specific model hyperparameters can be specified using the <code>manual</code> setting. Note when fitting multiple models tuning will be done in the <code>auto</code> mode. The <code>optimize for</code> is used to specify if you want to select the best model based on performance on the <code>training</code> or held out <code>test</code> data (recommended)." ,
+                fig= paste0(path,'model_menue.png'),
+                fig_right=fig_right,4),
+              list(text="This menu is used to specify the <code>training</code> and <code>test</code> data and model cross-validation parameters. Similar to the <code>model>>tune</code> the cross-validation parameters can be <code>manually</code> or <code>automatically</code> set. For example, the selections shown in the example will randomly select 70% of the data (samples) to fit the model which will then be validated on the 305 held out or <code>test</code> data. The model will be internally cross-validated by splitting the <code>training</code> data into <code>7</code> folds and then leaving out each fold during the model fit and then testing the performance on the held-out fold. This process will be repeated <code>3</code> times and the performance on the <code>training</code> data will be summarized over all the results.",
+                fig= paste0(path,'train_menue.png'),
+                fig_right=fig_right,4)
+              )
+
+
+
+#results
+#-------
+# section_name<-'results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(list(text=NULL,#'Overview the merge results.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4))
+#plots
+#-----
+# section_name<-'plots'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+plots<-list(
+            list(text="Model performance for the <code>training</code> and <code>test</code> data and training time can be compared.",
+              fig= paste0(path,'perf_plot.png'),
+              fig_right=fig_right,4),
+            list(text="This plot is used to visualize the impact of hyperparameters on model performance.",
+              fig= paste0(path,'model_plot.png'),
+              fig_right=fig_right,4),
+            list(text="Identify the proportion of miss classified samples.",
+              fig= paste0(path,'confusion_plot.png'),
+              fig_right=fig_right,4),
+            list(text="Visualize variable's importance or contribution to the model's performance. Importance for multiple models is calculated based weighted metric of the model’s performance and each variables importance in the model. Importance based on multiple models displays the variables consensus rank (y-axis) across all models and the actual importance in the single highest performing model (x-axis).",
+              fig= paste0(path,'importance_plot.png'),
+              fig_right=fig_right,4)
+            )
+
+
+# section_name<-'save'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+save<-NULL #list(section=section_title('Save') ,content=save))
+
+
+#merge menue
+args_train<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results),
+      list(section='link',asis=TRUE ,content=section_links$plots),
+      list(section=section_title('Explore and Plot') ,content=plots),
+      list(section='link',asis=TRUE ,content=section_links$save),
+      save),
+    collapse='\n<br>\n',section_tags='')
+
+
+
+#----------
+# feature selection
+#----------
+path<-paste0(tmpath,'selection/')
+link_name<-'dave.model.select.'
+fig_right<-TRUE
+section_links<-create_links(link_name)
+
+#calculate menue
+select_description<-'<code>Feature selection</code> is used to identify variables which maximize model performance. Optimal variables are identified using recursive feature elimination wherein many models are built from subsets of variables and an optimal model is identified based on which subset yielded the highest performing model.'
+
+#<code></code>
+# section_name<-'methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="The <code>data</code> menu is used to specify the model type and select target and predictor variables.",
+                fig= paste0(path,'data_menu.png'),
+                fig_right=fig_right,4),
+              list(text="The <code>optimize</code> menu is used to specify the algorithm used for the selection. The metric specifies which performance criteria will be used to identify the optimal subset of variables." ,
+                fig= paste0(path,'optimize_menu.png'),
+                fig_right=fig_right,4),
+              list(text="The <code>validate</code> menu is used to specify the model cross-validation parameters and size of the automatic hyperparameter tuning grid.",
+                fig= paste0(path,'validate_menu.png'),
+                fig_right=fig_right,4)
+              )
+
+
+
+
+#results
+#-------
+# section_name<-'results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(list(text=NULL,#'Overview the merge results.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4))
+#plots
+#-----
+# section_name<-'plots'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+plots<-list(
+            list(text="This visualization displays model performance (y-axis) based on the subset of variables (x-axis). The optimal model is highlighted in red. The plot controls can be used to specify which model metric will be used for the visualization (use <code>calculate</code> to optimized subsets for that metric). The optimal variables can be selected based on the <code>subset function</code>. Options include <code>PickSizeBest</code> which specifies the subset which maximized or minimized the chosen performance metric or <code>PickSizeTolerance</code> which allows for models with less parameters (variables), which are also worse than the optimal model. The accepted decrease in performance is specified as a percent of the metric in <code>tolerance</code>.",
+              fig= paste0(path,'overall_plot.png'),
+              fig_right=fig_right,4),
+            list(text="This visualizations shows the selected variables (red) importance compared to those which were removed (blue).",
+              fig= paste0(path,'importance_plot.png'),
+              fig_right=fig_right,4)
+            )
+
+# section_name<-'save'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+save<-list(list(text=paste0('Add selected features filter to the <code>row_metadata</code> or remove all non-selected variables from the data set <code>keep selected</code>. Common workflows might include <code>feature selection</code> followed by <code>training</code> wherein the <code>rfe_selected</code> filter can be used to select variables in the <code>data >> filter >> selected</code> menu (see',inner_link('dave.model',' here')$ref,' ).'),#'Overview the merge results.',
+              fig= paste0(path,'save.png'),
+              fig_right=fig_right,4))
+save<-list(section=section_title('Save') ,content=save)# list(section=section_title('Save') ,content=save))
+
+
+#merge menue
+args_select<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results),
+      list(section='link',asis=TRUE ,content=section_links$plots),
+      list(section=section_title('Explore and Plot') ,content=plots),
+      list(section='link',asis=TRUE ,content=section_links$save),
+      save),
+    collapse='\n<br>\n',section_tags='')
+
+
+#combine all args
+#------------------
+multi_args<-list(
+  list(title=NULL ,
+       description=NULL,
+       args=args_main),
+  list(title=submodule_title('Train') ,
+       description=train_description,
+       args=args_train),
+  list(title=submodule_title('Feature selection') ,
+       description=select_description,
+       args=args_select)
+  )
+
+out<-lapply(1:length(multi_args),function(i){
+  title<-multi_args[[i]]$title
+  content<-do.call('render_skeleton', multi_args[[i]]$args) 
+  c(title,multi_args[[i]]$description,content)
+}) %>% 
+  unlist() %>%
+  paste0(.,collapse = '\n<br>\n') 
+
+out %>% HTML()
+
+```

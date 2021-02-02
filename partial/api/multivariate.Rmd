@@ -1,0 +1,137 @@
+---
+output: html_fragment
+---
+
+```{r setup_multi, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F,results='asis')
+```
+
+
+```{r,}
+#
+suppressPackageStartupMessages(library(dave.help))
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome()) # required for icons
+
+
+```
+
+```{r}
+##dave multivariate
+module<-'Multivariate'
+link_name<-main_link_name<-'dave.reference.api'
+
+section_name<-NULL
+section_links<-inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+.path<-function(path,relative='../../'){
+  paste0(relative, path)
+}
+
+path<-.path('img/dave.multivariate/')
+
+
+fig_right<-FALSE
+mod_description<-'This module supports dimensional reduction and projection pursuits.'
+
+link_name<-'dave.multivariate'
+section_name<-''
+inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+args_main<-list(title=module,
+    nav=paste0(path,'nav.png'),
+    mod_desc=as.character(mod_description),
+    section=NULL,
+    collapse='\n<br>\n',section_tags='')
+
+link_name<-'dave.multivariate.'
+section_links<-create_links(link_name)
+
+
+PCA_description<-'Principal components analysis (PCA) can be used to summarise the major modes of variance in the data by fewer and uncorrelated principal components (PCs). It is helpful to analyze how sample and variable meta data is related to PCA sample scores and variable loadings.'
+#calculate menue
+#------------------------------
+
+# section_name<-'.methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(text='Specify the PCA method and normalize the data through centering and scaling.',
+              fig= paste0(path,'calculate.png'),
+              fig_right=fig_right,4) %>% list(.)
+
+
+
+#results
+#-------
+# section_name<-'.results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(text='Overview methodsand the variance explained by the PCA model.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4) %>% list(.)
+#plots
+#-----
+# section_name<-'.plots'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+plots<-list(
+             list(text='Select from a variety of plot types.',
+              fig= paste0(path,'menue_plot.png'),
+              fig_right=fig_right,4),
+            list(text='The <code>screeplot</code> shows the variance explained by each PC. The dashed line marks the 1 % variance limit below which components can be ommited.',
+              fig= paste0(path,'scree_plot.png'),
+              fig_right=fig_right,4),
+            list(text='Use <code>cummulative screeplot</code> to view the total % variance explained. The dashed line shows the boundary where 80% of the original variance in the data has been captured by the PCA model.',
+              fig= paste0(path,'cumm_eigen_explore.png'),
+              fig_right=fig_right,4),
+            list(text='The <code>diagnostics</code> plot can be used to identify moderate and extreme sample outliers. Large sample <code>leverage</code> denotes a large influence of the samples variance to the identification of the PC components (outliers). The <code>DmodX</code> or highlights moderate multivariate sample differences. Samples showing both high <code>leverage</code> and <code>DmodX</code> shoudl be investigated further.',
+              fig= paste0(path,'diagnostic_plot.png'),
+              fig_right=fig_right,4),
+            list(text='Sample <code>scores</code> display multivariate similarities through proximity to other samples in the PCA space.',
+              fig= paste0(path,'scores_plot.png'),
+              fig_right=fig_right,4),
+             list(text='The <code>loadings</code> plot displays variable similarities.',
+              fig= paste0(path,'loadings_plot.png'),
+              fig_right=fig_right,4),
+            list(text='The plotting menue for <code>scores</code> and <code>loadings</code> can be used to select PCs to view, map meta data to plot colors and group boundaries showing the Hoettlings T2 ellipse and modify plot asthetics.',
+              fig= paste0(path,'scores_plot_menue.png'),
+              fig_right=fig_right,4),
+            list(text='The <code>biplot</code> can be used to simultaneously visualize sample scores and loadings over layed on top of each other. Variables with extreme loadings (large positive or negative x/y position) have the largest effects on the sample scores (may correspond to low or high values among samples with similairly extreme scores compared to others).',
+              fig= paste0(path,'biplot_plot.png'),
+              fig_right=fig_right,4)
+            )
+
+
+
+args_PCA<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results),
+      list(section='link',asis=TRUE ,content=section_links$plots),
+      list(section=section_title('Explore and Plot') ,content=plots),
+      list(section='link',asis=TRUE ,content=section_links$results)),
+    collapse='\n<br>\n',section_tags='')
+
+#combine all args
+#------------------
+multi_args<-list(
+  list(title=NULL ,
+       description=NULL,
+       args=args_main),
+  list(title=submodule_title('Principal Components Analysis (PCA)') ,
+       description=PCA_description,
+       args=args_PCA))
+
+out<-lapply(1:length(multi_args),function(i){
+  title<-multi_args[[i]]$title
+  content<-do.call('render_skeleton', multi_args[[i]]$args) 
+  c(title,multi_args[[i]]$description,content)
+}) %>% 
+  unlist() %>%
+  paste0(.,collapse = '\n<br>\n') 
+
+out %>% HTML()
+
+```
+

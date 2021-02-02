@@ -1,0 +1,138 @@
+---
+output: 
+  html_fragment
+---
+
+
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
+
+suppressPackageStartupMessages(library(dave.help))
+
+```
+
+
+#### Merge
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_merge.png"))
+```
+</div>
+
+The `r dcr_g('preprocess')` `r dcr_g('merge')` `r dcr_g('module')` is used to select row meta data components from `dave_` and specify the `index` to merge the `numeric data` with `dave_var_meta` which contains information about each of the columns or measurements.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_merge_samples.png"))
+```
+</div>
+
+Select the Samples menu in the sidebar then the column names for the variables which contain the sample meta data. Next use the Variables menu to select the variable meta data: `dave_var_meta` and specify the column name for the `index`: ID to merge with `dave_`. 
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_merge_variables.png"))
+```
+</div>
+
+
+Note: in some cases, you may only have information about the variables and no numeric sample data. For example, you could have already calculated statistical significance for variables or have other information you want to use to conduct pathway, network or other analyses. In this case, change the `Data type` in the sidebar to `variables`. 
+
+Next click the `calculate` button to merge the data. This will output the merge methods used and results. 
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_merge_results.png"))
+```
+</div>
+
+
+The `plot` and `explore` tabs can be used to visualize the results.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_merge_plot.png"))
+```
+</div>
+
+
+Next, select `Save` menu in the sidebar, choose a name for your new data and save the data to use in other analyses. This will add the merged data to the global environment which then can be used for further analyses.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_save.png"))
+```
+</div>
+
+<!-- ###  `r dcr_g('Missing')` -->
+#### Filter missing values
+<hr>
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing.png"))
+```
+</div>
+
+The `r dcr_g('preprocess')` `r dcr_g('missing')`  is used to overview, remove and impute missing values in the numeric data. `r dcr_r('Important')` :  rows or columns a with too many missing values or a missing pattern biasing a factor in the sample meta data should be removed or imputed.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing_filter.png"))
+```
+</div>
+
+The `Filter` menu in the sidebar can be used to evaluate missing values across all variables. Missing values can be evaluated based on a grouping variable in the `sample meta data` e.g. class: diabetic or non-diabetic to remove missing patterns which can bias further analyses comparing the two groups. The selection shown above will remove any variable(s) which contain ≥ 50% missing values for either diabetic or non-diabetic samples. 
+
+Select calculate and then use the `plot` and `explore` tabs to visualize the results. 
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing_plot1.png"))
+```
+</div>
+
+The above visualization displays the persent missing valuse in variables overall and for each group.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img//dave.preproc/preproc_missing_plot2.png"))
+```
+</div>
+
+
+The above visualization shows sample(s) with missing values. `r dcr_r('Important')`: the remaining missing values should be replaced or imputed by selecting the `impute` menu in the sidebar.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing_impute1.png"))
+```
+</div>
+
+A simple method to impute missing values is to replace them with a specific value (e.g. 0) or a summary metric based on present values. If missing values are present due to analytical reasons like the measurement was below the limit of detection then a simple imputation approach like replacing missing values with the minimum of present values for each column reduced by 60% (e.g. missing values become the minimum value for each column multiplied by 0.6).
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing_impute2.png"))
+```
+</div>
+
+Once all the methods are set next use the `calculate` button to view the results.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_missing_results.png"))
+```
+</div>
+
+
+Use the sidebar `save` menu to save the results for further analyses. Note: don’t change the name of the data to easily keep all module results combined.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.preproc/preproc_save.png"))
+```
+</div>
+
+
+

@@ -1,0 +1,4 @@
+book_filename: "dave.docs"
+output_dir: "docs"
+new_session: false
+delete_merged_file: true

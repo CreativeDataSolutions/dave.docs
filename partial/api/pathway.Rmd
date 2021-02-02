@@ -1,0 +1,142 @@
+---
+output: html_fragment
+---
+
+```{r setup_pathway, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F,results='asis')
+```
+
+
+```{r}
+#
+suppressPackageStartupMessages(library(dave.help))
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome()) # required for icons
+
+
+```
+
+```{r}
+#DAVe pathway
+#-------------
+module<-'Pathways'
+section_name<-link_name<-NULL
+section_links<-inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+.path<-function(path,relative='../../'){
+  paste0(relative, path)
+}
+
+path<-.path('img/dave.pathway/')
+
+mod_description<-'This module is used to test for significant enrichment in biological pathways and visualize the results.'
+fig_right<-TRUE
+
+
+link_name<-'dave.pathway'
+section_name<-''
+inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+#main preproc menue
+args_main<-list(title=module,
+    nav=paste0(path,'nav.png'),
+    mod_desc=as.character(mod_description),
+    section=NULL,
+    collapse='\n<br>\n',section_tags='')
+
+#----------
+# enrichment
+#----------
+link_name<-'dave.pathway.'
+section_links<-create_links(link_name)
+
+#calculate menue
+mod1_description<-'Pathway<code>enrichment</code> is calculated using the hypergeometric test. This module uses the <code>KEGG</code> reference organism (ko) database.'
+
+# section_name<-'methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="Select the name of the column with<code>KEGG</code> id for each variable. Filter which variables will be tested for pathway enrichment based on statistical test <code>p-values</code> and significance <code>cut off</code>.",
+                fig= paste0(path,'enrich_menue.png'),
+                fig_right=fig_right,4),
+              list(text="Filter <code>enrichment</code> results based on the p-value <code>cutoff</code> and false dicovery rate (<code>FDR</code>) adjustment.",
+                fig= paste0(path,'filter_menue.png'),
+                fig_right=fig_right,4)
+              )
+
+
+#results
+#-------
+# section_name<-'results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(
+              list(text=NULL,#'Overview the merge results.',
+                 fig= paste0(path,'enrich_results.png'),
+                  fig_right=fig_right,4),
+              list(text='Overview the enrichment test methods and tabular results where: <code>map</code> is the KEGG pathway map id, <code>n_hits</code> is the number of significant variables from this pathway, <code>n_cpd</code> the number of compounds in the pathway and <code>prct</code> is the percent of enriched variables compared to total pathway variables. Selection of interesting pathways to investigate further could involve: 1) verifying that the pathway has a moderate minimum number of variables (e.g. > 10) 2) identifying low <code>p-value</code> and high <code>prct</code> enriched pathways 3) visualizing the network topology of enriched variables in the pathway (e.g. look for metabolic proximity of cha ges which may signify a functional module) . NOTE: Some very large and generic pathways such as <code>Metabolic pathways</code> can take a few minutes to render.',#'Overview the merge results.',
+                fig=NULL,
+                fig_right=fig_right,4)
+              )
+#plots
+#-----
+# section_name<-'plots'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+plots<-list(
+            list(text="Select pathway name and identify the column to use as the <code>fold-change</code> to view variable changes mapped to the pathway.",
+              fig= paste0(path,'plot_menue.png'),
+              fig_right=fig_right,4),
+            list(text=NULL,
+              fig= paste0(path,'pathway_plot.png'),
+              fig_right=fig_right,4),
+            list(text='The <code>fold-changes</code> normalized to between -1 and 1 are mapped onto pathway entities as described in the color bar in the top right corner.',
+              fig= NULL,
+              fig_right=fig_right,4)
+            )
+
+# 
+# section_name<-'report'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+report<-list(
+            list(text="Select the number of top pathways (based on <code>p-value</code>) to show in table outputs and which <code>pathways</code> to show visualizations of.",
+              fig= paste0(path,'report.png'),
+              fig_right=fig_right,4))
+
+
+#merge menue
+args_enrich<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results),
+      list(section='link',asis=TRUE ,content=section_links$plots),
+      list(section=section_title('Explore and Plot') ,content=plots),
+      list(section='link',asis=TRUE ,content=section_links$report),
+      list(section=section_title('Report') ,content=report)),
+    collapse='\n<br>\n',section_tags='h3')
+
+
+#combine all args
+#------------------
+multi_args<-list(
+  list(title=NULL ,
+       description=NULL,
+       args=args_main),
+  list(title=submodule_title('Pathway enrichment and visualization') ,
+       description=mod1_description,
+       args=args_enrich))
+
+out<-lapply(1:length(multi_args),function(i){
+  title<-multi_args[[i]]$title
+  content<-do.call('render_skeleton', multi_args[[i]]$args) 
+  c(title,multi_args[[i]]$description,content)
+}) %>% 
+  unlist() %>%
+  paste0(.,collapse = '\n<br>\n') 
+
+out %>% HTML()
+
+```
+

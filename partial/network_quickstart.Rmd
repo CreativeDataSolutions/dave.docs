@@ -1,0 +1,157 @@
+---
+output: 
+  html_fragment
+---
+
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+suppressPackageStartupMessages(library(dave.help))
+
+```
+
+`r inner_link(paste0('dave.network',section_name=NULL))$anchor %>% cat()`
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/nav.png"))
+```
+</div>
+
+
+The network module provides tools to calculate a variety of networks including:
+
+* `r dcr_g( 'Correlation')` and regularized partial correlation
+* `r dcr_g( 'Biochemical')` relationships 
+* `r dcr_g( 'Structural')` similarity
+
+The separately calculated networks can be merged and visualized or exported for visualization in other tools.
+
+* `r dcr_g( 'Enrich')` combine, customize and visualize networks
+
+
+### `r dcr_g('Biochemical networks')`
+
+To calculate biochemical networks, choose the `r dcr_g('Biochemical')` item from the network navbar. Then select the column name which contains `r dcr_gr('KEGG')`  identifiers for variables.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/keggmap/methods.png"))
+```
+</div>
+
+
+Select the calculate button and overview the results.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/keggmap/results.png"))
+```
+</div>
+
+
+Save the calculated network for export or to combine with other results.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/keggmap/save.png"))
+```
+</div>
+
+### `r dcr_g('Structural similarity')`
+
+To calculate metabolite relationships based on structural similarity choose the Structural item from the network navbar. Then select the column name containing `r dcr_g('PubChem CIDs')` (chemical identifiers).
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/chemmap/methods.png"))
+```
+</div>
+ 
+`r dcr_g('Important:')`, supplying non-valid CIDs or related SIDs (Structure Identifiers) may cause method failures or incorrect results. You can validate the CIDs through the [pubchem website](https://pubchem.ncbi.nlm.nih.gov/) or use the translation module.
+
+Once the identifier is selected click the `r dcr_g('calculate')` button and overview the results. Note first time calculations for metabolites not present in your DAVe environment may take a moment to download and process but will be cached to your local database and be quickly retrieved next time.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/chemmap/results.png"))
+```
+</div>
+
+A common approach is to remove variables with score ≤ 0.7. However, this may omit metabolites with weak relationships from the network. Currently, inclusion of multi-filter criteria needs to be done outside of DAVe. 
+
+Use the `r dcr_g('visualize')` menu in the navbar to filter connections based on the tanimoto similarity score.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/visualize/tab_bar.png"))
+```
+</div>
+
+
+In the visualize tab select the edges menu from the sidebar. The item ‘greater than’ and change the value to 0.7. Plot the results to apply the filter to the network. 
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/visualize/filter_cid.png"))
+```
+</div>
+
+
+View the updated results in the `r dcr_g('calculate')` tab and save the network. Note, the edges can be saved unfiltered and then formatted outside of DAVe.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/visualize/filter_cid_results.png"))
+```
+</div>
+
+
+Save the calculated network for export or to combine with other results.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/chemmap/save.png"))
+```
+</div>
+
+
+### `r dcr_g('Enrich')`
+
+Use the `r dcr_g('enrich')` menu to combine, format and visualizenetworks.
+
+Combine multiple networks into one. Select networks calculated from the same data source or sharing a network index.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/enrich/select_methods.png"))
+```
+</div>
+
+After the networks are selected click the `r dcr_g('calculate')` button and overview the results.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/enrich/results.png"))
+```
+</div>
+
+Save the results to visualize or export.
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.network/enrich/save.png"))
+```
+</div>
+
+
+Export network results
+
+Navigate to the `r dcr_g('Data')` navbar menu and select the network data fropm the  `r dcr_g('Datasets')` sidebar menu. 
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.main/data/select_data.png"))
+```
+</div>
+
+
+The <network_name>_edges and <network_name>_nodes contain the edge list and node attributes, respectively. Select each item one by one and use the save menu in the sidebar to export as .csv files.
+
+<div class='bordered'>
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics(normalizePath("../img/dave.main/data/export_csv.png"))
+```
+</div>
+
+
+

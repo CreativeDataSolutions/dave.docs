@@ -1,0 +1,308 @@
+---
+output: html_fragment
+---
+
+```{r setup_network, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F,results='asis')
+```
+
+
+```{r}
+#
+suppressPackageStartupMessages(library(dave.help))
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome()) # required for icons
+
+```
+
+
+```{r}
+#DAVe network
+#-------------
+module<-'Network analysis reference'
+link_name<-main_link_name<-'dave.network.api'  #use this for others relative refernce
+
+.path<-function(path,relative='../../'){
+  paste0(relative, path)
+}
+
+#options
+network_opts<-c('correlation and partial correlation',
+                'biochemical relationships',
+                'structural similarity', 
+                'network mapping and visualization')
+
+section_name<-NULL
+inner_link(paste0(link_name,section_name))$anchor %>% cat()
+
+mod_description<-paste0('Calculate and visualialize complex networks. Use network mapping to integrate your statistical, functional and machine-learning results.Current network options include: ',
+                        grammatical_paste(network_opts),'.') %>%
+  h4()
+fig_right<-FALSE
+path<-.path('img/dave.network/')
+
+#main preproc menue
+args_main<-list(title=NULL,
+    nav=paste0(path,'nav.png'),
+    mod_desc=as.character(mod_description),
+    section=NULL,
+    collapse='\n<br>\n',
+    section_tags='')
+
+#create methods and aresults section for all modules
+#want induvidual reports? init closed
+#global: save,report and plot
+
+#----------
+# correlation
+#----------
+path<-.path('img/dave.network/corrmap/')
+link_name<-paste0(main_link_name,'.corrmap.') # will be added to others
+section_links<-create_links(link_name)
+
+
+#calculate menue
+corrmap_description<-'This module is used to calculate and <code>regularized</code> <code>correlation</code> networks.'
+
+#methods
+# section_name<-'methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="Select correlation type and if p-valuse should be False discovery rate corrected.",
+                fig= paste0(path,'corr_methods.png'),
+                fig_right=fig_right,4),
+              list(text="Select regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic)." ,
+                fig= paste0(path,'reg_methods.png'),
+                fig_right=fig_right,4)
+              )
+
+
+
+#results
+#-------
+# section_name<-'results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(list(text='Get methods and summary for the calculated network.',#'Overview the merge results.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4))
+
+#merge menue
+args_corrmap<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results)),
+    collapse='\n<br>\n',section_tags='h3')
+
+
+#----------
+# biochemical
+#----------
+fig_right<-TRUE
+path<-.path('img/dave.network/keggmap/')
+link_name<-'dave.network.keggmap.'
+section_links<-create_links(link_name)
+
+#calculate menue
+keggmap_description<-'This module is used to calculate and <code>biochemcial</code> networks. Metabolomic precursor to product relationships are based on <code>KEGG</code> identifiers.'
+
+#methods
+# section_name<-'methods'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="Select KEGG (https://www.genome.jp/kegg/) identifier column name in the data.",
+                fig= paste0(path,'methods.png'),
+                fig_right=fig_right,4)
+              )
+
+
+
+#results
+#-------
+# section_name<-'results'
+# inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(list(text='Get methods and summary for the calculated network.',#'Overview the merge results.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4))
+
+#merge menue
+args_keggmap<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results)),
+    collapse='\n<br>\n',section_tags='h3')
+
+
+#----------
+# structural
+#----------
+fig_right<-FALSE
+path<-.path('img/dave.network/chemmap/')
+link_name<-'dave.network.chemmap.'
+section_links<-create_links(link_name)
+
+#calculate menue
+chemmap_description<-'This module is used to calculate and <code>structural</code> simialrity networks. Metabolite  <code>structural</code> similarities are calculated based on overlap in Pubchem structural fingerprints defined by  <code>compound identifiers</code> or  <code>CID</code> (see more: https://pubchem.ncbi.nlm.nih.gov/).'
+
+#methods
+# section_name<-'methods'
+# methods_link<-inner_link(paste0(link_name,section_name))$anchor %>% cat()
+methods<-list(
+              list(text="Select Pubchem CID (https://pubchem.ncbi.nlm.nih.gov/search/help_search.html) identifier column name in the data.",
+                fig= paste0(path,'methods.png'),
+                fig_right=fig_right,4)
+              )
+
+
+#results
+#-------
+# section_name<-'results'
+# results_link<-inner_link(paste0(link_name,section_name))$anchor %>% cat()
+results<-list(list(text='Get methods and summary for the calculated network.',#'Overview the merge results.',
+              fig= paste0(path,'results.png'),
+              fig_right=fig_right,4))
+
+#merge menue
+args_chemmap<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='link',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='methods',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results),
+      list(section='methods',asis=TRUE ,content=section_links$plots)),
+    collapse='\n<br>\n',section_tags='')
+
+
+#----------
+# combine
+#----------
+fig_right<-TRUE
+path<-.path('img/dave.network/enrich/')
+link_name<-'dave.network.enrich' # !TODO update app help
+section_links<-create_links(link_name)
+
+#calculate menue
+enrich_description<-'This module is used to combine and visualize networks.'
+ # Network mapping can be used to integrate statistical, functional and predictive modeling results.</h4>
+
+methods<-list(
+              list(text="<code>Select</code> networks to combine and visualize.",
+                fig= paste0(path,'select_methods.png'),
+                fig_right=fig_right,4),
+              list(text="<code>Update</code> network node attributes based on another compatible data set.",
+                fig= paste0(path,'update_methods.png'),
+                fig_right=fig_right,4))
+
+
+results<-list(list(text= "View combined network summary.",
+                fig= paste0(path,'results.png'),
+                fig_right=fig_right,4))
+
+#merge menue
+args_enrich<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='methods',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods),
+      list(section='link',asis=TRUE ,content=section_links$results),
+      list(section=section_title('Results') ,content=results)),
+    collapse='\n<br>\n',section_tags='')
+
+#----------
+# visualize
+#----------
+fig_right<-TRUE
+path<-.path('img/dave.network/visualize/')
+link_name<-'dave.network.visualize' # !TODO update app help
+section_links<-create_links(link_name)
+
+#calculate menue
+vis_description<-'Use network mapping to plot and enrich networks.'
+ # Network mapping can be used to integrate statistical, functional and predictive modeling results.</h4>
+
+methods<-list(
+              list(text="Visualize variable information through annotation of network node properties such as: name, color, size and shape.",
+                fig= paste0(path,'nodes_ui.png')
+                ),
+              list(text="Visualize and modify node attributes.",
+                fig= paste0(path,'place_holder.png'),  
+                fig_right=fig_right,4),
+              list(text="Modify and filter edges or relationships.",
+                fig= paste0(path,'filter_cid.png'),  
+                fig_right=fig_right,4),
+              list(text="Customize network global properties.",
+                fig= paste0(path,'canvas_ui.png'),  
+                fig_right=fig_right,4),
+              list(text="Visualize and modify node attributes.",
+                fig= paste0(path,'place_holder.png'),  
+                fig_right=fig_right,4),
+               list(text="Interactive network with zooming and hover.",
+                fig= paste0(path,'place_holder.png'),  
+                fig_right=fig_right,4),
+               list(text="Dynamic network with node manipulation and custom controls.",
+                fig= paste0(path,'place_holder.png'),  
+                fig_right=fig_right,4),
+              list(text="Investigate network topology.",
+                fig= paste0(path,'place_holder.png'),  
+                fig_right=fig_right,4),
+              list(text="Customize network global properties.",
+                fig= paste0(path,'canvas_ui.png'),  
+                fig_right=fig_right,4)
+              )
+
+
+#merge menue
+args_vis<-list(title=NULL,
+    nav=NULL,
+    mod_desc=NULL,
+    section=list(
+      list(section='methods',asis=TRUE ,content=section_links$methods),
+      list(section=section_title('Methods') ,content=methods)),
+    collapse='\n<br>\n',section_tags='')
+
+
+#combine all args
+#------------------
+multi_args<-list(
+  list(title=NULL ,
+       description=NULL,
+       args=args_main),
+  list(title=submodule_title('Empirical networks') ,
+       description=corrmap_description,
+       args=args_corrmap),
+   list(title=submodule_title('Biochemical networks') ,
+       description=keggmap_description,
+       args=args_keggmap),
+   list(title=submodule_title('Structural similarity networks') ,
+       description=chemmap_description,
+       args=args_chemmap),
+   list(title=submodule_title('Enrich networks') ,
+       description=enrich_description,
+       args=args_enrich),
+  list(title=submodule_title('Visualize networks') ,
+       description=vis_description,
+       args=args_vis)
+  )
+
+out<-lapply(1:length(multi_args),function(i){
+  title<-multi_args[[i]]$title
+  content<-do.call('render_skeleton', multi_args[[i]]$args) 
+  c(title,multi_args[[i]]$description,content)
+}) %>% 
+  unlist() %>%
+  paste0(.,collapse = '\n<br>\n') 
+
+out %>% HTML()
+
+```
+
