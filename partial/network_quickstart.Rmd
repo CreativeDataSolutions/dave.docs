@@ -30,7 +30,7 @@ The separately calculated networks can be merged and visualized or exported for 
 * `r dcr_g( 'Enrich')` combine, customize and visualize networks
 
 
-### `r dcr_g('Biochemical networks')`
+`r dcr_g('Biochemical networks')`
 
 To calculate biochemical networks, choose the `r dcr_g('Biochemical')` item from the network navbar. Then select the column name which contains `r dcr_gr('KEGG')`  identifiers for variables.
 <div class='bordered'>
@@ -55,7 +55,7 @@ knitr::include_graphics(normalizePath("../img/dave.network/keggmap/save.png"))
 ```
 </div>
 
-### `r dcr_g('Structural similarity')`
+`r dcr_g('Structural similarity')`
 
 To calculate metabolite relationships based on structural similarity choose the Structural item from the network navbar. Then select the column name containing `r dcr_g('PubChem CIDs')` (chemical identifiers).
 <div class='bordered'>
@@ -107,7 +107,7 @@ knitr::include_graphics(normalizePath("../img/dave.network/chemmap/save.png"))
 </div>
 
 
-### `r dcr_g('Enrich')`
+`r dcr_g('Enrich')`
 
 Use the `r dcr_g('enrich')` menu to combine, format and visualizenetworks.
 

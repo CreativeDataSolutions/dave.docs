@@ -1,17 +1,17 @@
 bookdown::gitbook:
-  split_by: none
+  split_by: chapter
   split_bib: false
-  toc_depth: 3
   css: style.css
   config:
     toc:
       scroll_highlight: yes
-      collapse: subsection
+      toc_depth: 3
+      collapse: section
       before: |
         <li><a href="./">DAVe.docs</a></li>
       after: |
         <li><a href="https://creative-data.science/" target="blank">CDS - Creative Data Solutions</a></li>
-    download: no
+    download: null
     sharing:
       github: no
       twitter: no

@@ -26,6 +26,19 @@
   position: center;
 }
 
+.book .book-header .btn {
+    display: block;
+    height: 50px;
+    padding: 0 15px;
+    border-bottom: none;
+    color: #00bc8c !important;
+    text-transform: uppercase;
+    line-height: 50px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    position: relative;
+    font-size: 20px;
+}
 
 /* styling text circles and centered image with drop shadow */
 .numberCircle {
