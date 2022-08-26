@@ -1,0 +1,92 @@
+---
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    toc-depth: 4 # default is 3
+    number-sections: false
+    anchor-sections: true
+    smooth-scroll: true
+    css: ../style.css
+---
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+suppressPackageStartupMessages(library('dave.help'))
+```
+
+# Publication quality networks {.unnumbered}
+
+##### Creating networks in [Cystoscape](https://cytoscape.org/)
+
+##### The following example shows how to use Cytoscape (v3.7.2) to create publication ready networks from assets calculated in DAVe. This example will use two components the `r dcr_gr( 'edge_list')` and the `r dcr_gr( 'node_data')` files.
+
+### Data
+##### `r dcr_gr( 'edge_list.csv')`
+
+![](img/dave.network/cytoscape/edge_list.png){.bordered}
+
+
+##### `r dcr_gr( 'node_data.csv')`
+
+![](img/dave.network/cytoscape/node_data.png){.bordered}
+
+
+
+### Upload 
+
+#### Edge list
+
+##### First step is to load the `r dcr_gr( 'edge_list')`.
+
+##### In cytoscape select `r dcr_gr( 'File')` >> `r dcr_gr( 'Import')` >> `r dcr_gr( 'network from File Upload')`  and then select the `r dcr_gr( 'edge_list.csv')` file.
+
+![](img/dave.network/cytoscape/cy1.png){.bordered}
+
+
+##### Set from and to columns 
+ 
+![](img/dave.network/cytoscape/cy2.png){.bordered}
+
+
+
+##### `r dcr_gr( 'from')` set to `r dcr_gr( 'Source Node')` 
+
+![](img/dave.network/cytoscape/cy3.png){.bordered}
+
+
+##### `r dcr_gr( 'to')` set to `r dcr_gr( 'Target Node')` 
+
+![](img/dave.network/cytoscape/cy4.png){.bordered}
+
+
+##### Select `r dcr_gr( 'OK')` once the source and target columns are identified.
+
+##### Overview network
+
+![](img/dave.network/cytoscape/cy5.png){.bordered}
+
+#### Node attributes 
+
+##### Next load the `r dcr_gr( 'node _data')`. Select `r dcr_gr( 'File')` >> `r dcr_gr( 'Import')` >> `r dcr_gr( 'Table from File')`
+
+
+![](img/dave.network/cytoscape/cy6.png){.bordered}
+
+
+##### Select the `r dcr_gr( 'ID')` column as the variable `r dcr_gr( 'Key')`
+
+![](img/dave.network/cytoscape/cy7.png){.bordered}
+
+
+### Define mappings
+
+##### The uploaded node attributes should now be available to edit the network node and edge visual properties.
+
+![](img/dave.network/cytoscape/cy8.png){.bordered}
+
+
+##### Specify the node and edge visual properties. 
+ 
+![](img/dave.network/cytoscape/cy9.png){.bordered}
+
+##### Take a look at the example `r dcr_gr( 'cytoscape.cys')` file for how each of the data columns were mapped to the network.

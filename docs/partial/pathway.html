@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dave.docs - 6&nbsp; Pathway Enrichment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../partial/model.html" rel="next">
+<link href="../partial/multivariate.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pathway Enrichment</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">dave.docs</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/getting_started.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/quickstart.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/workflows.html" class="sidebar-item-text sidebar-link">Workflows</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/preprocess.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/stats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/cluster.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clustering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/multivariate.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multivariate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/pathway.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pathway Enrichment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Predictive modeling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/network.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/dave_network_to_cytoscape.html" class="sidebar-item-text sidebar-link">Publication quality networks</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#enrichment" id="toc-enrichment" class="nav-link active" data-scroll-target="#enrichment"><span class="txbox_green">Enrichment</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate" id="toc-calculate" class="nav-link" data-scroll-target="#calculate"><span class="txbox_gray">Calculate</span></a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot"><span class="txbox_gray">Plot</span></a></li>
+  <li><a href="#report" id="toc-report" class="nav-link" data-scroll-target="#report"><span class="txbox_gray">Report</span></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pathway Enrichment</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="the-pathway-module-is-used-to-test-for-significant-enrichment-in-biological-pathways-and-visualize-the-results." class="level5">
+<h5 class="anchored" data-anchor-id="the-pathway-module-is-used-to-test-for-significant-enrichment-in-biological-pathways-and-visualize-the-results.">The <span class="txbox_green">pathway</span> module is used to test for significant enrichment in biological pathways and visualize the results.</h5>
+</section>
+<section id="enrichment" class="level3">
+<h3 class="anchored" data-anchor-id="enrichment"><span class="txbox_green">Enrichment</span></h3>
+<section id="this-analysis-implements-a-hypergeometric-test-to-identify-significant-enrichment-in-kegg-biochemical-pathways-based-on-statistical-test-p-values.-enrichment-is-calculated-based-on-the-kegg-database-and-reference-ko-organism." class="level5">
+<h5 class="anchored" data-anchor-id="this-analysis-implements-a-hypergeometric-test-to-identify-significant-enrichment-in-kegg-biochemical-pathways-based-on-statistical-test-p-values.-enrichment-is-calculated-based-on-the-kegg-database-and-reference-ko-organism.">This analysis implements a hypergeometric test to identify significant enrichment in KEGG biochemical pathways based on statistical test p-values. Enrichment is calculated based on the <code>KEGG</code> database and reference (ko) organism.</h5>
+</section>
+<section id="calculate" class="level4">
+<h4 class="anchored" data-anchor-id="calculate"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-the-name-of-the-column-with-kegg-id-for-each-variable.-filter-which-variables-will-be-tested-for-pathway-enrichment-based-on-statistical-test-p-values-and-significance-cut-off." class="level5">
+<h5 class="anchored" data-anchor-id="select-the-name-of-the-column-with-kegg-id-for-each-variable.-filter-which-variables-will-be-tested-for-pathway-enrichment-based-on-statistical-test-p-values-and-significance-cut-off.">Select the name of the column with <code>KEGG</code> id for each variable. Filter which variables will be tested for pathway enrichment based on statistical test <code>p-values</code> and significance <code>cut off</code>.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/enrich_menue.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="filter-enrichment-results-based-on-the-p-value-cutoff-and-false-dicovery-rate-fdr-adjustment." class="level5">
+<h5 class="anchored" data-anchor-id="filter-enrichment-results-based-on-the-p-value-cutoff-and-false-dicovery-rate-fdr-adjustment.">Filter <code>enrichment</code> results based on the p-value <code>cutoff</code> and false dicovery rate (<code>FDR</code>) adjustment.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/filter_menue.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="overview-the-enrichment-test-methods-and-tabular-results-where-map-is-the-kegg-pathway-map-id-n_hits-is-the-number-of-significant-variables-from-this-pathway-n_cpd-the-number-of-compounds-in-the-pathway-and-prct-is-the-percent-of-enriched-variables-compared-to-total-pathway-variables.-selection-of-interesting-pathways-to-investigate-further-could-involve-1-verifying-that-the-pathway-has-a-moderate-minimum-number-of-variables-e.g.-10-2-identifying-low-p-value-and-high-prct-enriched-pathways-3-visualizing-the-network-topology-of-enriched-variables-in-the-pathway-e.g.-look-for-metabolic-proximity-of-cha-ges-which-may-signify-a-functional-module-.-note-some-very-large-and-generic-pathways-such-as-metabolic-pathways-can-take-a-few-minutes-to-render." class="level5">
+<h5 class="anchored" data-anchor-id="overview-the-enrichment-test-methods-and-tabular-results-where-map-is-the-kegg-pathway-map-id-n_hits-is-the-number-of-significant-variables-from-this-pathway-n_cpd-the-number-of-compounds-in-the-pathway-and-prct-is-the-percent-of-enriched-variables-compared-to-total-pathway-variables.-selection-of-interesting-pathways-to-investigate-further-could-involve-1-verifying-that-the-pathway-has-a-moderate-minimum-number-of-variables-e.g.-10-2-identifying-low-p-value-and-high-prct-enriched-pathways-3-visualizing-the-network-topology-of-enriched-variables-in-the-pathway-e.g.-look-for-metabolic-proximity-of-cha-ges-which-may-signify-a-functional-module-.-note-some-very-large-and-generic-pathways-such-as-metabolic-pathways-can-take-a-few-minutes-to-render.">Overview the enrichment test methods and tabular results where: <code>map</code> is the KEGG pathway map id, <code>n_hits</code> is the number of significant variables from this pathway, <code>n_cpd</code> the number of compounds in the pathway and <code>prct</code> is the percent of enriched variables compared to total pathway variables. Selection of interesting pathways to investigate further could involve: 1) verifying that the pathway has a moderate minimum number of variables (e.g.&nbsp;&gt; 10) 2) identifying low <code>p-value</code> and high <code>prct</code> enriched pathways 3) visualizing the network topology of enriched variables in the pathway (e.g.&nbsp;look for metabolic proximity of cha ges which may signify a functional module) . NOTE: Some very large and generic pathways such as <code>Metabolic pathways</code> can take a few minutes to render.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/enrich_results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="plot" class="level4">
+<h4 class="anchored" data-anchor-id="plot"><span class="txbox_gray">Plot</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-pathway-name-and-identify-the-column-to-use-as-the-fold-change-to-view-variable-changes-mapped-to-the-pathway." class="level5">
+<h5 class="anchored" data-anchor-id="select-pathway-name-and-identify-the-column-to-use-as-the-fold-change-to-view-variable-changes-mapped-to-the-pathway.">Select pathway name and identify the column to use as the <code>fold-change</code> to view variable changes mapped to the pathway.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/plot_menue.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="the-fold-changes-normalized-to-between--1-and-1-are-mapped-onto-pathway-entities-as-described-in-the-color-bar-in-the-top-right-corner." class="level5">
+<h5 class="anchored" data-anchor-id="the-fold-changes-normalized-to-between--1-and-1-are-mapped-onto-pathway-entities-as-described-in-the-color-bar-in-the-top-right-corner.">The <code>fold-changes</code> normalized to between -1 and 1 are mapped onto pathway entities as described in the color bar in the top right corner.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/pathway_plot.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="report" class="level4">
+<h4 class="anchored" data-anchor-id="report"><span class="txbox_gray">Report</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-the-number-of-top-pathways-based-on-p-value-to-show-in-table-outputs-and-which-pathways-to-show-visualizations-of." class="level5">
+<h5 class="anchored" data-anchor-id="select-the-number-of-top-pathways-based-on-p-value-to-show-in-table-outputs-and-which-pathways-to-show-visualizations-of.">Select the number of top pathways (based on <code>p-value</code>) to show in table outputs and which <code>pathways</code> to show visualizations of.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.path/report.png" class="bordered img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../partial/multivariate.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multivariate</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../partial/model.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Predictive modeling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

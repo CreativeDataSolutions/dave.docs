@@ -1,0 +1,694 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Benjamini",
+                    "given": "Y."
+                },
+                {
+                    "family": "Hochberg",
+                    "given": "Y."
+                }
+            ],
+            "container-title": "Journal of the Royal Statistical Society Series B-Methodological",
+            "id": "p_adjust_BH",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "keyword": "bonferroni-type procedures familywise error rate multiple-comparison procedures p-values bonferroni procedure",
+            "page": "289-300",
+            "title": "Controlling the false discovery rate - a practical and powerful approach to multiple testing",
+            "type": "article-journal",
+            "volume": "57"
+        },
+        {
+            "author": [
+                {
+                    "family": "Creek",
+                    "given": "DJ"
+                },
+                {
+                    "family": "Jankevics",
+                    "given": "A."
+                },
+                {
+                    "family": "Burgess",
+                    "given": "KE."
+                },
+                {
+                    "family": "Breitling",
+                    "given": "R."
+                },
+                {
+                    "family": "MP",
+                    "given": "Barrett"
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "ideom",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "title": "IDEOM: An excel interface for analysis of LC-MS-based metabolomics data",
+            "title-short": "IDEOM",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dabney",
+                    "given": "A."
+                },
+                {
+                    "family": "Storey",
+                    "given": "J. D."
+                },
+                {
+                    "family": "Warnes",
+                    "given": "G. R."
+                }
+            ],
+            "container-title": "R package version 1.32.0.",
+            "id": "rqvalue",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "title": "Qvalue: Q-value estimation for false discovery rate control.",
+            "title-short": "Qvalue",
+            "type": "article-journal"
+        },
+        {
+            "abstract": "SUMMARY: Interactive modules for Data Exploration and Visualization (imDEV) is a Microsoft Excel spreadsheet embedded application providing an integrated environment for the analysis of omics data through a user-friendly interface. Individual modules enable interactive and dynamic analyses of large data by interfacing R’s multivariate statistics and highly customizable visualizations with the spreadsheet environment, aiding robust inferences and generating information rich data visualizations. This tool provides access to multiple comparisons with false discovery correction, hierarchical clustering, principal (PCA) and independent component analyses (ICA), partial least squares regression (PLS) and discriminant analysis (PLS-DA), through an intuitive interface for creating high quality two and a three-dimensional visualizations including scatter plot matrices, distribution plots, dendrograms, heat maps, biplots, trellis biplots and correlation networks.Availability and Implementation: Freely available for download at http://sourceforge.net/projects/imdev/. Implemented in R and VBA and supported by Microsoft Excel (2003, 2007 and 2010). CONTACT: John W. Newman - John.Newman@ars.usda.gov SUPPLEMENTARY INFORMATION: Installation instructions, tutorials, and users manual are available at http://sourceforge.net/apps/mediawiki/imdev.",
+            "author": [
+                {
+                    "family": "Grapov",
+                    "given": "D."
+                },
+                {
+                    "family": "Newman",
+                    "given": "J. W."
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "imdev",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "note": "Grapov, Dmitry Newman, John W Journal article Bioinformatics (Oxford, England) Bioinformatics. 2012 Jul 18.",
+            "title": "imDEV: A graphical user interface to r multivariate analysis tools in microsoft excel",
+            "title-short": "imDEV",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Klaus",
+                    "given": "Bernd"
+                },
+                {
+                    "family": "Strimmer.",
+                    "given": "Korbinian"
+                }
+            ],
+            "container-title": "R package version 1.2.10",
+            "id": "fdrtools",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "title": "Fdrtool: Estimation of (local) false discovery rates and higher criticism",
+            "title-short": "Fdrtool",
+            "type": "article-journal",
+            "volume": "http://CRAN.R-project.org/package=fdrtool"
+        },
+        {
+            "URL": "http://CRAN.R-project.org/package=pls",
+            "author": [
+                {
+                    "family": "Mevik",
+                    "given": "Bjorn-Helge"
+                },
+                {
+                    "family": "Wehrens",
+                    "given": "Ron"
+                },
+                {
+                    "family": "Liland",
+                    "given": "Kristian Hovde"
+                }
+            ],
+            "id": "rpls",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "note": "R package version 2.3-0",
+            "title": "Pls: Partial least squares and principal component regression",
+            "title-short": "Pls",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "O. Svensson",
+                    "suffix": "T. Kourti"
+                },
+                {
+                    "family": "MacGregor.",
+                    "given": "J. F."
+                }
+            ],
+            "container-title": "J. Chemom.",
+            "id": "oscplsrev",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "176-188",
+            "title": "A comparison of orthogonal signal correction algorithms and characteristics.",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "abstract": "Cytoscape is an open source software project for integrating biomolecular interaction networks with high-throughput expression data and other molecular states into a unified conceptual framework. Although applicable to any system of molecular components and interactions, Cytoscape is most powerful when used in conjunction with large databases of protein-protein, protein-DNA, and genetic interactions that are increasingly available for humans and model organisms. Cytoscape’s software Core provides basic functionality to layout and query the network; to visually integrate the network with expression profiles, phenotypes, and other molecular states; and to link the network to databases of functional annotations. The Core is extensible through a straightforward plug-in architecture, allowing rapid development of additional computational analyses and features. Several case studies of Cytoscape plug-ins are surveyed, including a search for interaction pathways correlating with changes in gene expression, a study of protein complexes involved in cellular recovery to DNA damage, inference of a combined physical/functional interaction network for Halobacterium, and an interface to detailed stochastic/kinetic gene regulatory models.",
+            "author": [
+                {
+                    "family": "Shannon",
+                    "given": "P."
+                },
+                {
+                    "family": "Markiel",
+                    "given": "A."
+                },
+                {
+                    "family": "Ozier",
+                    "given": "O."
+                },
+                {
+                    "family": "Baliga",
+                    "given": "N. S."
+                },
+                {
+                    "family": "Wang",
+                    "given": "J. T."
+                },
+                {
+                    "family": "Ramage",
+                    "given": "D."
+                },
+                {
+                    "family": "Amin",
+                    "given": "N."
+                },
+                {
+                    "family": "Schwikowski",
+                    "given": "B."
+                },
+                {
+                    "family": "Ideker",
+                    "given": "T."
+                }
+            ],
+            "container-title": "Genome Res",
+            "id": "cytoscape",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "keyword": "Algorithms Archaeal Proteins/chemistry/metabolism Bacteriophage lambda/physiology Computational Biology/*methods Halobacterium/chemistry/cytology/physiology Internet *Models, Biological *Neural Networks (Computer) Phenotype Software/*trends *Software Design Stochastic Processes",
+            "note": "Shannon, Paul Markiel, Andrew Ozier, Owen Baliga, Nitin S Wang, Jonathan T Ramage, Daniel Amin, Nada Schwikowski, Benno Ideker, Trey P20 GM64361/GM/NIGMS NIH HHS/ Genome Res. 2003 Nov;13(11):2498-504.",
+            "page": "2498-504",
+            "title": "Cytoscape: A software environment for integrated models of biomolecular interaction networks",
+            "title-short": "Cytoscape",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "author": [
+                {
+                    "family": "Stacklies",
+                    "given": "Wolfram"
+                },
+                {
+                    "family": "Redestig",
+                    "given": "Henning"
+                },
+                {
+                    "family": "Scholz",
+                    "given": "Matthias"
+                },
+                {
+                    "family": "Walther",
+                    "given": "Dirk"
+                },
+                {
+                    "family": "Selbig",
+                    "given": "Joachim"
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "pcaMethods",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "1164-1167",
+            "title": "pcaMethods – a bioconductor package providing PCA methods for incomplete data",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sugimoto",
+                    "given": "M."
+                },
+                {
+                    "family": "Kawakami",
+                    "given": "M."
+                },
+                {
+                    "family": "Robert",
+                    "given": "M."
+                },
+                {
+                    "family": "Soga",
+                    "given": "T."
+                },
+                {
+                    "family": "Tomita",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Curr Bioinform.",
+            "id": "metabanal",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "96-108",
+            "title": "Bioinformatics tools for mass spectroscopy-based metabolomic data processing and analysis.",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "author": [
+                {
+                    "family": "Team",
+                    "given": "R Development Core"
+                }
+            ],
+            "id": "rcran",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Trygg",
+                    "given": "J."
+                },
+                {
+                    "family": "Wold.",
+                    "given": "S."
+                }
+            ],
+            "container-title": "J. Chemom",
+            "id": "opls",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "119-128",
+            "title": "Orthogonal projections to latent structures (o-PLS).",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Venables",
+                    "given": "W. N."
+                },
+                {
+                    "family": "Ripley",
+                    "given": "B. D."
+                }
+            ],
+            "id": "statsS",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag",
+            "title": "Modern applied statistics with s",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wehrens",
+                    "given": "Ron"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Robert Gentleman",
+                    "given": "Kurt Hornik"
+                },
+                {
+                    "family": "Parmigiani",
+                    "given": "Giovanni"
+                }
+            ],
+            "id": "o_pls",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag",
+            "title": "Chemometrics with r: Multivariate data analysis in the natural sciencesand life sciences",
+            "title-short": "Chemometrics with r",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wold",
+                    "given": "S."
+                },
+                {
+                    "family": "Sjostrom",
+                    "given": "M."
+                },
+                {
+                    "family": "Eriksson",
+                    "given": "L."
+                }
+            ],
+            "container-title": "Chemometrics and Intelligent Laboratory Systems",
+            "id": "pls",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "keyword": "pls plsr two-block predictive pls latent variables multivariate analysis partial least-squares cross-validation kernel algorithm amino-acids prediction jackknife design",
+            "page": "109-130",
+            "title": "PLS-regression: A basic tool of chemometrics",
+            "title-short": "PLS-regression",
+            "type": "article-journal",
+            "volume": "58"
+        },
+        {
+            "DOI": "10.1023/a:1010933404324",
+            "ISSN": "1573-0565",
+            "URL": "https://doi.org/10.1023/A:1010933404324",
+            "author": [
+                {
+                    "family": "Breiman",
+                    "given": "Leo"
+                }
+            ],
+            "container-title": "Machine Learning",
+            "genre": "Journal Article",
+            "id": "BreimanRF",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "5-32",
+            "title": "Random forests",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0048852",
+            "ISSN": "1932-6203 (Electronic)\n1932-6203 (Linking)",
+            "URL": "https://www.ncbi.nlm.nih.gov/pubmed/23144998",
+            "author": [
+                {
+                    "family": "Grapov",
+                    "given": "D."
+                },
+                {
+                    "family": "Adams",
+                    "given": "S. H."
+                },
+                {
+                    "family": "Pedersen",
+                    "given": "T. L."
+                },
+                {
+                    "family": "Garvey",
+                    "given": "W. T."
+                },
+                {
+                    "family": "Newman",
+                    "given": "J. W."
+                }
+            ],
+            "container-title": "PLoS One",
+            "genre": "Journal Article",
+            "id": "GrapovT2D",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "e48852",
+            "title": "Type 2 diabetes associated changes in the plasma non-esterified fatty acids, oxylipins and endocannabinoids",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "DOI": "10.1093/bioinformatics/btv194",
+            "ISSN": "1367-4811 (Electronic)\n1367-4803 (Linking)",
+            "URL": "https://www.ncbi.nlm.nih.gov/pubmed/25847005",
+            "author": [
+                {
+                    "family": "Grapov",
+                    "given": "D."
+                },
+                {
+                    "family": "Wanichthanarak",
+                    "given": "K."
+                },
+                {
+                    "family": "Fiehn",
+                    "given": "O."
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "genre": "Journal Article",
+            "id": "metamapr",
+            "issue": "16",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "2757-60",
+            "title": "MetaMapR: Pathway independent metabolomic network analysis incorporating unknowns",
+            "title-short": "MetaMapR",
+            "type": "article-journal",
+            "volume": "31"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hollander",
+                    "given": "Myles"
+                },
+                {
+                    "family": "Wolfe",
+                    "given": "Douglas A."
+                }
+            ],
+            "container-title": "New York: John Wiley and Sons",
+            "id": "kruskal",
+            "issued": {
+                "date-parts": [
+                    [
+                        1973
+                    ]
+                ]
+            },
+            "page": "115 - 120",
+            "title": "Nonparametric statistical methods",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sachs",
+                    "given": "Lothar"
+                }
+            ],
+            "container-title": "Berlin: Springe",
+            "id": "kruskal_posthoc",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "395-397, 662-664",
+            "title": "Angewandte statistik",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=caret",
+            "author": [
+                {
+                    "dropping-particle": "from",
+                    "family": "Jed Wing",
+                    "given": "Max Kuhn. Contributions"
+                },
+                {
+                    "family": "Weston",
+                    "given": "Steve"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Andre"
+                },
+                {
+                    "family": "Keefer",
+                    "given": "Chris"
+                },
+                {
+                    "family": "Engelhardt",
+                    "given": "Allan"
+                },
+                {
+                    "family": "Cooper",
+                    "given": "Tony"
+                },
+                {
+                    "family": "Mayer",
+                    "given": "Zachary"
+                },
+                {
+                    "family": "Kenkel",
+                    "given": "Brenton"
+                },
+                {
+                    "dropping-particle": "the",
+                    "family": "R Core Team"
+                },
+                {
+                    "family": "Benesty",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Lescarbeau",
+                    "given": "Reynald"
+                },
+                {
+                    "family": "Ziem",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "Scrucca",
+                    "given": "Luca"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Yuan"
+                },
+                {
+                    "family": "Candan",
+                    "given": "Can"
+                },
+                {
+                    "family": "Hunt.",
+                    "given": "Tyler"
+                }
+            ],
+            "id": "caret",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "note": "R package version 6.0-84",
+            "title": "Caret: Classification and regression training",
+            "title-short": "Caret",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

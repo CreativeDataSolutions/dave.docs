@@ -1,0 +1,326 @@
+---
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    toc-depth: 4 # default is 3
+    number-sections: false
+    anchor-sections: true
+    smooth-scroll: true
+    css: ../style.css
+---
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+suppressPackageStartupMessages(library('dave.help'))
+```
+
+# Network Analysis
+
+##### Calculate emprical regularized [correlation](#correlation), [biochemical](#biochemical) relationships and [structural similarity](#structural) networks. Each module supports rich `static`, `interactive` and `dynamic` network [visualizations](#visualize).
+
+### [Translate]{.txbox_green}
+##### Translate between > 200 bichemical identifiers.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Select translation options. The `identifier` selects the column in the `col_meta` to translate. Use `from` and `to` to specify the identify of the selected `identifier` and what new `identifier` it should be translated to.
+
+::: 
+
+::: column 
+![](img/dave.network/translate/methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View translation results.
+
+::: 
+
+::: column 
+![](img/dave.network/translate/results.png){.bordered}
+:::
+:::
+
+### [Mapping]{.txbox_green}
+##### Combine and create variable mappings to add to network visualization node and edge properties.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Map the log base 2 transformed `fold-change` to its absolute value and sign. This is useful to normalize increases and decreases and encode their magnitude and direction of change using separate asthetics. 
+
+::: 
+
+::: column 
+![](img/dave.network/mapping/methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Map the significance of a `p-value` to a binary (e.g. true or false) outcome. This is useful to separate asthetics for significant and non-significant `fold-changes`. The following examples would evaluate if the `p-value` is less than or equal to `0.05`.
+
+::: 
+
+::: column 
+![](img/dave.network/mapping/methods_p.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Combine mapped variables. This is useful to fine-tune asthetics based on custom combinations of mappings.
+
+::: 
+
+::: column 
+![](img/dave.network/mapping/methods_combine.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View the results of the mapping process. Note you first need to `save` the results from `fold-change` and `p-values` prior to using them with the `combine` transformation.
+
+::: 
+
+::: column 
+![](img/dave.network/mapping/results.png){.bordered}
+:::
+:::
+
+
+### [Correlation]{.txbox_green}
+##### This module is used to create and `regularized` `correlation` networks @huge.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Select correlation type and if `p-values` should be `False discovery rate` @p_adjust_BH corrected.
+
+::: 
+
+::: column 
+![](img/dave.network/corrmap/corr_methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Select regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic) @huge. Note you can also manually select the regularization `lambda` (higher lambda is more strict), but this needs to be done after a model is calculated. If no edges are returned using `manual` then try a lowe or less stict regularization.
+
+::: 
+
+::: column 
+![](img/dave.network/corrmap/reg_methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View methods and summary for the calculated network.
+
+::: 
+
+::: column 
+![](img/dave.network/corrmap/results.png){.bordered}
+:::
+:::
+
+### [Biochemical]{.txbox_green}
+##### This module is used to calculate and `biochemcial` networks. Metabolomic precursor to product relationships are based on `KEGG` identifiers.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Select [KEGG](https://www.genome.jp/kegg/) identifier column name in the data.
+
+::: 
+
+::: column 
+![](img/dave.network/keggmap/methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View methods and summary for the calculated network.
+
+::: 
+
+::: column 
+![](img/dave.network/keggmap/results.png){.bordered}
+:::
+:::
+
+### [Structural]{.txbox_green}
+
+##### This module is used to calculate and `structural` simialrity networks. Metabolite  `structural` similarities are calculated based on overlap in Pubchem structural fingerprints defined by  `compound identifiers` or  [`CID`](https://pubchem.ncbi.nlm.nih.gov/)
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Select Pubchem [CID](https://pubchem.ncbi.nlm.nih.gov/search/help_search.html) identifier column name in the data.
+
+::: 
+
+::: column 
+![](img/dave.network/chemmap/methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View methods and summary for the calculated network.
+
+::: 
+
+::: column 
+![](img/dave.network/chemmap/results.png){.bordered}
+:::
+:::
+
+### [Enrich]{.txbox_green}
+
+##### This module is used to combine and visualize networks.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### `Select` networks to combine and visualize. Use `single edges` to remove duplicate edges from the combined edge lists.
+
+::: 
+
+::: column 
+![](img/dave.network/enrich/select_methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### `Update` network node attributes based on another compatible data set.
+
+::: 
+
+::: column 
+![](img/dave.network/enrich/update_methods.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View methods and summary for the calculated network.
+
+::: 
+
+::: column 
+![](img/dave.network/enrich/results.png){.bordered}
+:::
+:::
+
+#### [Visualize]{.txbox_gray}
+
+##### Visualize the created networks. Note the same visualization options are also available for the `r dcr_g('correlation')`, `r dcr_g('biochemical')` and `r dcr_g('structural')` modules.
+
+::::: columns 
+::: column 
+
+
+##### Visualize and modify network node attributes.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/nodes_ui.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+
+##### Modify and filter edges or relationships. Use this module to filter edges based on structural similarity (e.g. >0.8) or correlation strength.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/edges_ui.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+
+##### Customize network global properties.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/canvas_ui.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+
+##### Create `static` plots which will be featured in the `r dcr_gr('report')`.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/plot_static.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+
+##### Create `interactive` plots which allow pan zoom, on hover annotations and control of which nodes and edges are shown.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/plot_interactive.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+
+##### Create `idynamic` plots which highlight node connections, on hover annotations, moving nodes and look up of nodes of interest.
+
+::: 
+
+::: column 
+![](img/dave.network/visualize/plot_dynamic.png){.bordered}
+:::
+:::

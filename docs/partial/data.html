@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dave.docs - 1&nbsp; Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../partial/preprocess.html" rel="next">
+<link href="../partial/workflows.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet">
+<link href="../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">dave.docs</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/getting_started.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/quickstart.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/workflows.html" class="sidebar-item-text sidebar-link">Workflows</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/preprocess.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/stats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/cluster.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clustering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/multivariate.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multivariate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/pathway.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pathway Enrichment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Predictive modeling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/network.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/dave_network_to_cytoscape.html" class="sidebar-item-text sidebar-link">Publication quality networks</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#reference" id="toc-reference" class="nav-link active" data-scroll-target="#reference">Reference</a>
+  <ul class="collapse">
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+
+</div>
+</div>
+<section id="the-data-module-can-be-used-to" class="level5">
+<h5 class="anchored" data-anchor-id="the-data-module-can-be-used-to">The <span class="txbox_green">Data</span> module can be used to:</h5>
+<ul>
+<li><h5 id="upload-data-from-files-or-load-saved-projects" class="anchored">upload data from files or load saved projects</h5></li>
+<li><h5 id="overview-and-summarize-data-components" class="anchored">overview and summarize data components</h5></li>
+<li><h5 id="manage-saved-data" class="anchored">manage saved data</h5></li>
+<li><h5 id="download" class="anchored">download</h5></li>
+</ul>
+<p><img src="img/dave.preproc/data_overview.png" class="bordered img-fluid"></p>
+</section>
+<section id="the-data-module-is-used-to-load-overview-and-manage-data-sets-used-by-all-other-modules.-the-following-is-an-example-of-how-to-format-data-for-analysis-in-dave.-to-load-the-tutorial-data-select-the-data-module-then-load-on-the-sidebar-data-type-examples-load." class="level5">
+<h5 class="anchored" data-anchor-id="the-data-module-is-used-to-load-overview-and-manage-data-sets-used-by-all-other-modules.-the-following-is-an-example-of-how-to-format-data-for-analysis-in-dave.-to-load-the-tutorial-data-select-the-data-module-then-load-on-the-sidebar-data-type-examples-load.">The <span class="txbox_green" style="background-color: #3dbc8b !important;">Data</span> module is used to load, overview and manage data sets used by all other <span class="txbox_green" style="background-color: #3dbc8b !important;">modules</span>. The following is an example of how to format data for analysis in DAVe. To load the tutorial data select the Data module &gt;&gt; then Load on the sidebar &gt;&gt; Data type: examples &gt;&gt; load.</h5>
+<p><img src="img/dave.preproc/tutorial_data.png" class="bordered img-fluid"></p>
+</section>
+<section id="loading-the-example-data-will-add-the-dave_-and-dave_var_meta-data-sets-which-are-examples-of-how-to-format-the-numeric-data-sample-row-meta-data-and-variable-column-meta-data.-notice-that-dave_-contains-both-information-about-the-samples-columns-a-to-c-which-describes-each-of-the-measurements.-for-example-the-first-row-contains-information-about-the-sample-label-sample1-its-class-non-diabetic-and-age-old.-the-measured-values-for-sample1-start-in-column-d-e.g.-var1-var2-etc.-the-measured-variables-can-correspond-to-any-numeric-data-to-be-used-for-the-analysis-while-the-sample-meta-data-contained-in-the-first-three-columns-can-be-used-to-construct-statistical-and-machine-learning-models-and-annotate-visualizations." class="level5">
+<h5 class="anchored" data-anchor-id="loading-the-example-data-will-add-the-dave_-and-dave_var_meta-data-sets-which-are-examples-of-how-to-format-the-numeric-data-sample-row-meta-data-and-variable-column-meta-data.-notice-that-dave_-contains-both-information-about-the-samples-columns-a-to-c-which-describes-each-of-the-measurements.-for-example-the-first-row-contains-information-about-the-sample-label-sample1-its-class-non-diabetic-and-age-old.-the-measured-values-for-sample1-start-in-column-d-e.g.-var1-var2-etc.-the-measured-variables-can-correspond-to-any-numeric-data-to-be-used-for-the-analysis-while-the-sample-meta-data-contained-in-the-first-three-columns-can-be-used-to-construct-statistical-and-machine-learning-models-and-annotate-visualizations.">Loading the example data will add the <code>dave_</code> and <code>dave_var_meta</code> data sets which are examples of how to format the <code>numeric data</code>, <code>sample (row) meta data</code> and <code>variable (column) meta data</code>. Notice that <code>dave_</code> contains both information about the samples (columns A to C) which describes each of the measurements. For example, the first row contains information about the sample label: sample1, its class: non-diabetic and age: old. The measured values for sample1 start in column D (e.g.&nbsp;var1, var2, etc). The measured variables can correspond to any numeric data to be used for the analysis while the sample meta data contained in the first three columns can be used to construct <code>statistical</code> and <code>machine learning models</code> and annotate <code>visualizations</code>.</h5>
+<p><img src="img/dave.preproc/data_diagram2.png" class="bordered img-fluid"></p>
+</section>
+<section id="to-merge-the-sample-meta-data-and-numeric-data-we-need-to-specify-the-index-shared-by-the-dave_-and-dave_var_meta-data-components.-the-index-corresponding-the-mapping-between-the-two-data-sets-is-defined-in-the-id-column-in-dave_var_meta.-note-while-this-column-can-have-any-name-it-needs-to-contain-the-exact-column-names-specified-for-the-numeric-data-in-dave_.-for-example-the-first-row-in-dave_var_meta-describes-the-numeric-variable-named-var1-in-the-dave_-data.-important-it-is-recommended-to-use-strings-with-no-spaces-and-special-characters-e.g.-var1-or-measurement_1-instead-of-numeric-values-to-name-the-numeric-data-and-the-index." class="level5">
+<h5 class="anchored" data-anchor-id="to-merge-the-sample-meta-data-and-numeric-data-we-need-to-specify-the-index-shared-by-the-dave_-and-dave_var_meta-data-components.-the-index-corresponding-the-mapping-between-the-two-data-sets-is-defined-in-the-id-column-in-dave_var_meta.-note-while-this-column-can-have-any-name-it-needs-to-contain-the-exact-column-names-specified-for-the-numeric-data-in-dave_.-for-example-the-first-row-in-dave_var_meta-describes-the-numeric-variable-named-var1-in-the-dave_-data.-important-it-is-recommended-to-use-strings-with-no-spaces-and-special-characters-e.g.-var1-or-measurement_1-instead-of-numeric-values-to-name-the-numeric-data-and-the-index.">To merge the sample meta data and numeric data we need to specify the index shared by the <code>dave_</code> and <code>dave_var_meta</code> data components. The <code>index</code> corresponding the mapping between the two data sets is defined in the <code>ID</code> column in <code>dave_var_meta</code>. Note: while this column can have any name, it needs to contain the exact column name(s) specified for the numeric data in <code>dave_</code>. For example, the first row in <code>dave_var_meta</code> describes the numeric variable named var1 in the <code>dave_</code> data. Important: it is recommended to use strings with no spaces and special characters (e.g.&nbsp;var1 or measurement_1) instead of numeric values to name the numeric data and the index.</h5>
+</section>
+<section id="next-use-the-preprocess-module-to-merge-the-two-data-set." class="level5">
+<h5 class="anchored" data-anchor-id="next-use-the-preprocess-module-to-merge-the-two-data-set.">Next use the <span class="txbox_green" style="background-color: #3dbc8b !important;">Preprocess</span> <span class="txbox_green" style="background-color: #3dbc8b !important;">module</span> to merge the two data set.</h5>
+</section>
+<section id="reference" class="level1">
+<h1>Reference</h1>
+<p><img src="img/dave.main/data_nav.png" class="bordered img-fluid"></p>
+<section id="this-module-is-used-to-overview-and-manage-data-and-metadata-objects.-to-get-started-format-your-data-into-two-parts-as-shown-below-and-then-follow-along-with-the-instructions-in-preprocess-merge-to-create-an-analysis-ready-data-object." class="level5">
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-overview-and-manage-data-and-metadata-objects.-to-get-started-format-your-data-into-two-parts-as-shown-below-and-then-follow-along-with-the-instructions-in-preprocess-merge-to-create-an-analysis-ready-data-object.">This module is used to overview and manage data and metadata objects. To get started format your data into two parts as shown below and then follow along with the instructions in <span class="txbox_green" style="background-color: #3dbc8b !important;">Preprocess</span> &gt;&gt; <span class="txbox_green" style="background-color: #3dbc8b !important;">Merge</span> to create an analysis ready data object.</h5>
+</section>
+<section id="formatting" class="level3">
+<h3 class="anchored" data-anchor-id="formatting">Formatting</h3>
+<section id="the-data-should-be-formatted-into-two-parts-1-the-main-data-containing-sample-descriptions-and-numeric-variable-data-and-2-variable-meta-data-decribing-the-measurements." class="level5">
+<h5 class="anchored" data-anchor-id="the-data-should-be-formatted-into-two-parts-1-the-main-data-containing-sample-descriptions-and-numeric-variable-data-and-2-variable-meta-data-decribing-the-measurements.">The data should be formatted into two parts 1) the main data containing sample descriptions and numeric variable data and 2) variable meta data decribing the measurements.</h5>
+<p><img src="img/dave.main/data_diagram1.png" class="bordered img-fluid"></p>
+</section>
+<div class="columns">
+<div class="column">
+<section id="select-and-view-the-data-as-a-summary-or-table." class="level5">
+<h5 class="anchored" data-anchor-id="select-and-view-the-data-as-a-summary-or-table.">Select and view the data as a summary or table.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/select.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="data-can-be-uploaded-in-the-following-formats-.csv-project-or-example." class="level5">
+<h5 class="anchored" data-anchor-id="data-can-be-uploaded-in-the-following-formats-.csv-project-or-example.">Data can be uploaded in the following formats: .csv, project or example.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/load.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="selected-data-summary." class="level5">
+<h5 class="anchored" data-anchor-id="selected-data-summary.">Selected data summary.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/overview_summary.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="selected-data-table-overview." class="level5">
+<h5 class="anchored" data-anchor-id="selected-data-table-overview.">Selected data table overview.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/overview_table.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="data-can-be-saved-as-a-.csv-for-download-or-a-project-which-can-be-loaded-later." class="level5">
+<h5 class="anchored" data-anchor-id="data-can-be-saved-as-a-.csv-for-download-or-a-project-which-can-be-loaded-later.">Data can be saved as a .csv for download or a project which can be loaded later.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/save.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="delete-data-objects." class="level5">
+<h5 class="anchored" data-anchor-id="delete-data-objects.">Delete data objects.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.main/delete.png" class="bordered img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../partial/workflows.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Workflows</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../partial/preprocess.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

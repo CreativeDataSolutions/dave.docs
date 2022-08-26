@@ -1,0 +1,18 @@
+{
+  "hash": "b4ccca182f1993049c4e29da083b294a",
+  "result": {
+    "markdown": "---\nformat:\n  html:\n    toc: true\n    toc-title: On this page\n    toc-depth: 4 # default is 3\n    number-sections: false\n    anchor-sections: true\n    smooth-scroll: true\n    css: ../style.css\n---\n\n\n# Introduction {.unnumbered}\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n:::\n:::\n\n\n\n\n<hr> <center><h2><b>DAVe: Data Analysis and Visualization engine</b></h2></center> <hr>\n\n![](img/dave.main/full.png){.center}\n\n##### DAVe, application interactively combines statistics, clustering, data exploration and visualization with machine learning, functional and network analysis to create information and context rich mapped networks. The following manual describes a selection of available workflows. Get ready to connect your data with context!\n\n<br>\n\n![](img/dave.main/nav.png){.center}\n\n### Modules\n##### DAVe is comprised of 10 modules covering: data, plotting, pre-processing, statistics, clustering, dimensional reduction, pathway analysis, predictive modeling, network analysis and reporting domains. Each module contains a `calculate`, `explore`, `plot` and `report` components.\n\n### Actions\n#### <span class=\"txbox_green\" style=\"background-color: #808080; !important;\">Calculate</span> \n\n<hr>\n##### This tab is used to set the method options and view the results summary and tabular output.\n![](img/dave.ml/model/results.png){.center}\n\n#### <span class=\"txbox_green\" style=\"background-color: #808080; !important;\">Explore</span> \n\n<hr>\n\n##### Interactively explore the results.\n![](img/dave.main/explore.png){.center}\n\n#### <span class=\"txbox_green\" style=\"background-color: #808080; !important;\">Plot</span>\n\n<hr>\n##### View and tune your data visualizations.\n![](img/dave.main/plot.png){.center}\n\n#### <span class=\"txbox_green\" style=\"background-color: #808080; !important;\">Report</span>\n\n<hr>\n\n##### Create data analysis summaries and reproducible reports.\n![](img/dave.main/dave_report.png){.center}\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../site_libs/font-awesome-5.1.0/css/all.css\" rel=\"stylesheet\" />\r\n<link href=\"../site_libs/font-awesome-5.1.0/css/v4-shims.css\" rel=\"stylesheet\" />\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

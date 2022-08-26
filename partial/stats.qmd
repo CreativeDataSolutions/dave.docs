@@ -1,0 +1,104 @@
+---
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    toc-depth: 4 # default is 3
+    number-sections: false
+    anchor-sections: true
+    smooth-scroll: true
+    css: ../style.css
+---
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+suppressPackageStartupMessages(library('dave.help'))
+```
+
+# Statistics
+##### The [statistics]{.txbox_green} module is used to carry out statistical analyses, identify and filter the data based on significant differences between groups.
+
+### [two-class]{.txbox_green}
+
+##### This data analysis implements a non-parametric test for differences in means between two groups. This test does not assume normality and can be robust to outliers when testing for differences in means between two groups with small samples sizes. This module can also be used to identify differentially expressed variables between groups and create filtered datasets based on the test p-values @kruskal.
+
+::::: columns 
+::: column 
+##### Identify experimental design factor(s) to use for tests and specify variable meta data.
+::: 
+
+::: column 
+![](img/dave.stat/design.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Select significance level (alpha) to use in visualizations and filter the data.
+::: 
+::: column 
+![](img/dave.stat/filter.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### View statistical test results.
+::: 
+::: column 
+![](img/dave.stat/results.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Create a volcano plot to visualize the relationship between variable fold-changes between groups and test p-values.
+::: 
+::: column 
+![](img/dave.stat/volcanoe.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Identify variables with large fold-changes between groups and low p-values.
+::: 
+::: column 
+![](img/dave.stat/volcanoe_explore.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Select one or many variables to generate violin density plots.
+::: 
+::: column 
+![](img/dave.stat/violin.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Explore variable distributions among groups.
+::: 
+::: column 
+![](img/dave.stat/violin_explore.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Use `r dcr_gr('plot')` to view many variables and overview the plot style for the `r dcr_gr('report')`.
+::: 
+::: column 
+![](img/dave.stat/violin_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Save results and optionally remove non-significant variables by selecting `keep selected`.
+::: 
+::: column 
+![](img/dave.stat/save.png){.bordered}
+:::
+:::

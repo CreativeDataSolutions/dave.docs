@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dave.docs - 8&nbsp; Network Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../partial/dave_network_to_cytoscape.html" rel="next">
+<link href="../partial/model.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">dave.docs</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/getting_started.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/quickstart.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/workflows.html" class="sidebar-item-text sidebar-link">Workflows</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/preprocess.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/stats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/cluster.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clustering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/multivariate.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multivariate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/pathway.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pathway Enrichment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Predictive modeling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/network.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/dave_network_to_cytoscape.html" class="sidebar-item-text sidebar-link">Publication quality networks</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#translate" id="toc-translate" class="nav-link active" data-scroll-target="#translate"><span class="txbox_green">Translate</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate" id="toc-calculate" class="nav-link" data-scroll-target="#calculate"><span class="txbox_gray">Calculate</span></a></li>
+  </ul></li>
+  <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping"><span class="txbox_green">Mapping</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-1" id="toc-calculate-1" class="nav-link" data-scroll-target="#calculate-1"><span class="txbox_gray">Calculate</span></a></li>
+  </ul></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="txbox_green">Correlation</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-2" id="toc-calculate-2" class="nav-link" data-scroll-target="#calculate-2"><span class="txbox_gray">Calculate</span></a></li>
+  </ul></li>
+  <li><a href="#biochemical" id="toc-biochemical" class="nav-link" data-scroll-target="#biochemical"><span class="txbox_green">Biochemical</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-3" id="toc-calculate-3" class="nav-link" data-scroll-target="#calculate-3"><span class="txbox_gray">Calculate</span></a></li>
+  </ul></li>
+  <li><a href="#structural" id="toc-structural" class="nav-link" data-scroll-target="#structural"><span class="txbox_green">Structural</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-4" id="toc-calculate-4" class="nav-link" data-scroll-target="#calculate-4"><span class="txbox_gray">Calculate</span></a></li>
+  </ul></li>
+  <li><a href="#enrich" id="toc-enrich" class="nav-link" data-scroll-target="#enrich"><span class="txbox_green">Enrich</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-5" id="toc-calculate-5" class="nav-link" data-scroll-target="#calculate-5"><span class="txbox_gray">Calculate</span></a></li>
+  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize"><span class="txbox_gray">Visualize</span></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Network Analysis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="calculate-emprical-regularized-correlation-biochemical-relationships-and-structural-similarity-networks.-each-module-supports-rich-static-interactive-and-dynamic-network-visualizations." class="level5">
+<h5 class="anchored" data-anchor-id="calculate-emprical-regularized-correlation-biochemical-relationships-and-structural-similarity-networks.-each-module-supports-rich-static-interactive-and-dynamic-network-visualizations.">Calculate emprical regularized <a href="#correlation">correlation</a>, <a href="#biochemical">biochemical</a> relationships and <a href="#structural">structural similarity</a> networks. Each module supports rich <code>static</code>, <code>interactive</code> and <code>dynamic</code> network <a href="#visualize">visualizations</a>.</h5>
+</section>
+<section id="translate" class="level3">
+<h3 class="anchored" data-anchor-id="translate"><span class="txbox_green">Translate</span></h3>
+<section id="translate-between-200-bichemical-identifiers." class="level5">
+<h5 class="anchored" data-anchor-id="translate-between-200-bichemical-identifiers.">Translate between &gt; 200 bichemical identifiers.</h5>
+</section>
+<section id="calculate" class="level4">
+<h4 class="anchored" data-anchor-id="calculate"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-translation-options.-the-identifier-selects-the-column-in-the-col_meta-to-translate.-use-from-and-to-to-specify-the-identify-of-the-selected-identifier-and-what-new-identifier-it-should-be-translated-to." class="level5">
+<h5 class="anchored" data-anchor-id="select-translation-options.-the-identifier-selects-the-column-in-the-col_meta-to-translate.-use-from-and-to-to-specify-the-identify-of-the-selected-identifier-and-what-new-identifier-it-should-be-translated-to.">Select translation options. The <code>identifier</code> selects the column in the <code>col_meta</code> to translate. Use <code>from</code> and <code>to</code> to specify the identify of the selected <code>identifier</code> and what new <code>identifier</code> it should be translated to.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/translate/methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-translation-results." class="level5">
+<h5 class="anchored" data-anchor-id="view-translation-results.">View translation results.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/translate/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="mapping" class="level3">
+<h3 class="anchored" data-anchor-id="mapping"><span class="txbox_green">Mapping</span></h3>
+<section id="combine-and-create-variable-mappings-to-add-to-network-visualization-node-and-edge-properties." class="level5">
+<h5 class="anchored" data-anchor-id="combine-and-create-variable-mappings-to-add-to-network-visualization-node-and-edge-properties.">Combine and create variable mappings to add to network visualization node and edge properties.</h5>
+</section>
+<section id="calculate-1" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-1"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="map-the-log-base-2-transformed-fold-change-to-its-absolute-value-and-sign.-this-is-useful-to-normalize-increases-and-decreases-and-encode-their-magnitude-and-direction-of-change-using-separate-asthetics." class="level5">
+<h5 class="anchored" data-anchor-id="map-the-log-base-2-transformed-fold-change-to-its-absolute-value-and-sign.-this-is-useful-to-normalize-increases-and-decreases-and-encode-their-magnitude-and-direction-of-change-using-separate-asthetics.">Map the log base 2 transformed <code>fold-change</code> to its absolute value and sign. This is useful to normalize increases and decreases and encode their magnitude and direction of change using separate asthetics.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/mapping/methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="map-the-significance-of-a-p-value-to-a-binary-e.g.-true-or-false-outcome.-this-is-useful-to-separate-asthetics-for-significant-and-non-significant-fold-changes.-the-following-examples-would-evaluate-if-the-p-value-is-less-than-or-equal-to-0.05." class="level5">
+<h5 class="anchored" data-anchor-id="map-the-significance-of-a-p-value-to-a-binary-e.g.-true-or-false-outcome.-this-is-useful-to-separate-asthetics-for-significant-and-non-significant-fold-changes.-the-following-examples-would-evaluate-if-the-p-value-is-less-than-or-equal-to-0.05.">Map the significance of a <code>p-value</code> to a binary (e.g.&nbsp;true or false) outcome. This is useful to separate asthetics for significant and non-significant <code>fold-changes</code>. The following examples would evaluate if the <code>p-value</code> is less than or equal to <code>0.05</code>.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/mapping/methods_p.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="combine-mapped-variables.-this-is-useful-to-fine-tune-asthetics-based-on-custom-combinations-of-mappings." class="level5">
+<h5 class="anchored" data-anchor-id="combine-mapped-variables.-this-is-useful-to-fine-tune-asthetics-based-on-custom-combinations-of-mappings.">Combine mapped variables. This is useful to fine-tune asthetics based on custom combinations of mappings.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/mapping/methods_combine.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-the-results-of-the-mapping-process.-note-you-first-need-to-save-the-results-from-fold-change-and-p-values-prior-to-using-them-with-the-combine-transformation." class="level5">
+<h5 class="anchored" data-anchor-id="view-the-results-of-the-mapping-process.-note-you-first-need-to-save-the-results-from-fold-change-and-p-values-prior-to-using-them-with-the-combine-transformation.">View the results of the mapping process. Note you first need to <code>save</code> the results from <code>fold-change</code> and <code>p-values</code> prior to using them with the <code>combine</code> transformation.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/mapping/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="correlation" class="level3">
+<h3 class="anchored" data-anchor-id="correlation"><span class="txbox_green">Correlation</span></h3>
+<section id="this-module-is-used-to-create-and-regularized-correlation-networks-huge." class="level5">
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-create-and-regularized-correlation-networks-huge.">This module is used to create and <code>regularized</code> <code>correlation</code> networks <span class="citation" data-cites="huge">(<a href="../references.html#ref-huge" role="doc-biblioref"><strong>huge?</strong></a>)</span>.</h5>
+</section>
+<section id="calculate-2" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-2"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-correlation-type-and-if-p-values-should-be-false-discovery-rate-p_adjust_bh-corrected." class="level5">
+<h5 class="anchored" data-anchor-id="select-correlation-type-and-if-p-values-should-be-false-discovery-rate-p_adjust_bh-corrected.">Select correlation type and if <code>p-values</code> should be <code>False discovery rate</code> <span class="citation" data-cites="p_adjust_BH">Benjamini and Hochberg (<a href="../references.html#ref-p_adjust_BH" role="doc-biblioref">1995</a>)</span> corrected.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/corrmap/corr_methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="select-regularizationm-method-based-on-rotation-information-criterion-ric-stability-approach-to-regularization-selection-stars-or-extended-bayesian-information-criterion-ebic-huge.-note-you-can-also-manually-select-the-regularization-lambda-higher-lambda-is-more-strict-but-this-needs-to-be-done-after-a-model-is-calculated.-if-no-edges-are-returned-using-manual-then-try-a-lowe-or-less-stict-regularization." class="level5">
+<h5 class="anchored" data-anchor-id="select-regularizationm-method-based-on-rotation-information-criterion-ric-stability-approach-to-regularization-selection-stars-or-extended-bayesian-information-criterion-ebic-huge.-note-you-can-also-manually-select-the-regularization-lambda-higher-lambda-is-more-strict-but-this-needs-to-be-done-after-a-model-is-calculated.-if-no-edges-are-returned-using-manual-then-try-a-lowe-or-less-stict-regularization.">Select regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic) <span class="citation" data-cites="huge">(<a href="../references.html#ref-huge" role="doc-biblioref"><strong>huge?</strong></a>)</span>. Note you can also manually select the regularization <code>lambda</code> (higher lambda is more strict), but this needs to be done after a model is calculated. If no edges are returned using <code>manual</code> then try a lowe or less stict regularization.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/corrmap/reg_methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-methods-and-summary-for-the-calculated-network." class="level5">
+<h5 class="anchored" data-anchor-id="view-methods-and-summary-for-the-calculated-network.">View methods and summary for the calculated network.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/corrmap/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="biochemical" class="level3">
+<h3 class="anchored" data-anchor-id="biochemical"><span class="txbox_green">Biochemical</span></h3>
+<section id="this-module-is-used-to-calculate-and-biochemcial-networks.-metabolomic-precursor-to-product-relationships-are-based-on-kegg-identifiers." class="level5">
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-calculate-and-biochemcial-networks.-metabolomic-precursor-to-product-relationships-are-based-on-kegg-identifiers.">This module is used to calculate and <code>biochemcial</code> networks. Metabolomic precursor to product relationships are based on <code>KEGG</code> identifiers.</h5>
+</section>
+<section id="calculate-3" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-3"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-kegg-identifier-column-name-in-the-data." class="level5">
+<h5 class="anchored" data-anchor-id="select-kegg-identifier-column-name-in-the-data.">Select <a href="https://www.genome.jp/kegg/">KEGG</a> identifier column name in the data.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/keggmap/methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-methods-and-summary-for-the-calculated-network.-1" class="level5">
+<h5 class="anchored" data-anchor-id="view-methods-and-summary-for-the-calculated-network.-1">View methods and summary for the calculated network.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/keggmap/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="structural" class="level3">
+<h3 class="anchored" data-anchor-id="structural"><span class="txbox_green">Structural</span></h3>
+<section id="this-module-is-used-to-calculate-and-structural-simialrity-networks.-metabolite-structural-similarities-are-calculated-based-on-overlap-in-pubchem-structural-fingerprints-defined-by-compound-identifiers-or-cid" class="level5">
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-calculate-and-structural-simialrity-networks.-metabolite-structural-similarities-are-calculated-based-on-overlap-in-pubchem-structural-fingerprints-defined-by-compound-identifiers-or-cid">This module is used to calculate and <code>structural</code> simialrity networks. Metabolite <code>structural</code> similarities are calculated based on overlap in Pubchem structural fingerprints defined by <code>compound identifiers</code> or <a href="https://pubchem.ncbi.nlm.nih.gov/"><code>CID</code></a></h5>
+</section>
+<section id="calculate-4" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-4"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-pubchem-cid-identifier-column-name-in-the-data." class="level5">
+<h5 class="anchored" data-anchor-id="select-pubchem-cid-identifier-column-name-in-the-data.">Select Pubchem <a href="https://pubchem.ncbi.nlm.nih.gov/search/help_search.html">CID</a> identifier column name in the data.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/chemmap/methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-methods-and-summary-for-the-calculated-network.-2" class="level5">
+<h5 class="anchored" data-anchor-id="view-methods-and-summary-for-the-calculated-network.-2">View methods and summary for the calculated network.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/chemmap/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="enrich" class="level3">
+<h3 class="anchored" data-anchor-id="enrich"><span class="txbox_green">Enrich</span></h3>
+<section id="this-module-is-used-to-combine-and-visualize-networks." class="level5">
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-combine-and-visualize-networks.">This module is used to combine and visualize networks.</h5>
+</section>
+<section id="calculate-5" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-5"><span class="txbox_gray">Calculate</span></h4>
+<div class="columns">
+<div class="column">
+<section id="select-networks-to-combine-and-visualize.-use-single-edges-to-remove-duplicate-edges-from-the-combined-edge-lists." class="level5">
+<h5 class="anchored" data-anchor-id="select-networks-to-combine-and-visualize.-use-single-edges-to-remove-duplicate-edges-from-the-combined-edge-lists."><code>Select</code> networks to combine and visualize. Use <code>single edges</code> to remove duplicate edges from the combined edge lists.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/enrich/select_methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="update-network-node-attributes-based-on-another-compatible-data-set." class="level5">
+<h5 class="anchored" data-anchor-id="update-network-node-attributes-based-on-another-compatible-data-set."><code>Update</code> network node attributes based on another compatible data set.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/enrich/update_methods.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-methods-and-summary-for-the-calculated-network.-3" class="level5">
+<h5 class="anchored" data-anchor-id="view-methods-and-summary-for-the-calculated-network.-3">View methods and summary for the calculated network.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/enrich/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="visualize" class="level4">
+<h4 class="anchored" data-anchor-id="visualize"><span class="txbox_gray">Visualize</span></h4>
+<section id="visualize-the-created-networks.-note-the-same-visualization-options-are-also-available-for-the-correlation-biochemical-and-structural-modules." class="level5">
+<h5 class="anchored" data-anchor-id="visualize-the-created-networks.-note-the-same-visualization-options-are-also-available-for-the-correlation-biochemical-and-structural-modules.">Visualize the created networks. Note the same visualization options are also available for the <span class="txbox_green" style="background-color: #3dbc8b !important;">correlation</span>, <span class="txbox_green" style="background-color: #3dbc8b !important;">biochemical</span> and <span class="txbox_green" style="background-color: #3dbc8b !important;">structural</span> modules.</h5>
+</section>
+<div class="columns">
+<div class="column">
+<section id="visualize-and-modify-network-node-attributes." class="level5">
+<h5 class="anchored" data-anchor-id="visualize-and-modify-network-node-attributes.">Visualize and modify network node attributes.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/nodes_ui.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="modify-and-filter-edges-or-relationships.-use-this-module-to-filter-edges-based-on-structural-similarity-e.g.-0.8-or-correlation-strength." class="level5">
+<h5 class="anchored" data-anchor-id="modify-and-filter-edges-or-relationships.-use-this-module-to-filter-edges-based-on-structural-similarity-e.g.-0.8-or-correlation-strength.">Modify and filter edges or relationships. Use this module to filter edges based on structural similarity (e.g.&nbsp;&gt;0.8) or correlation strength.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/edges_ui.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="customize-network-global-properties." class="level5">
+<h5 class="anchored" data-anchor-id="customize-network-global-properties.">Customize network global properties.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/canvas_ui.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="create-static-plots-which-will-be-featured-in-the-report." class="level5">
+<h5 class="anchored" data-anchor-id="create-static-plots-which-will-be-featured-in-the-report.">Create <code>static</code> plots which will be featured in the <span class="txbox_green" style="background-color: #808080; !important;">report</span>.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/plot_static.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="create-interactive-plots-which-allow-pan-zoom-on-hover-annotations-and-control-of-which-nodes-and-edges-are-shown." class="level5">
+<h5 class="anchored" data-anchor-id="create-interactive-plots-which-allow-pan-zoom-on-hover-annotations-and-control-of-which-nodes-and-edges-are-shown.">Create <code>interactive</code> plots which allow pan zoom, on hover annotations and control of which nodes and edges are shown.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/plot_interactive.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="create-idynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest." class="level5">
+<h5 class="anchored" data-anchor-id="create-idynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest.">Create <code>idynamic</code> plots which highlight node connections, on hover annotations, moving nodes and look up of nodes of interest.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.network/visualize/plot_dynamic.png" class="bordered img-fluid"></p>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-p_adjust_BH" class="csl-entry" role="doc-biblioentry">
+Benjamini, Y., and Y. Hochberg. 1995. <span>“Controlling the False Discovery Rate - a Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society Series B-Methodological</em> 57 (1): 289–300.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../partial/model.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Predictive modeling</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../partial/dave_network_to_cytoscape.html" class="pagination-link">
+        <span class="nav-page-text">Publication quality networks</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

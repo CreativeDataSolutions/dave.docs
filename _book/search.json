@@ -1,0 +1,184 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "dave.docs",
+    "section": "",
+    "text": "DAVe: Data Analysis and Visualization engine users manual\nContact: dmitry@creative-data.solutions"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "https://quarto.org/docs/authoring/article-layout.html This is a book created from markdown and executable code."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Hollander, Myles, and Douglas A. Wolfe. 1973. “Nonparametric\nStatistical Methods.” New York: John Wiley and Sons,\n115–20."
+  },
+  {
+    "objectID": "intro.html#hi",
+    "href": "intro.html#hi",
+    "title": "1  Introduction",
+    "section": "Hi",
+    "text": "Hi\n1\nSee Benjamini and Hochberg (1995) for additional discussion of literate programming.\n\n\n\nSome text\n\n\n\n\n\n\n\n\n\n\nSome text\n\n\n\n\nh4\ntext\n\n\n\n\nBenjamini, Y., and Y. Hochberg. 1995. “Controlling the False Discovery Rate - a Practical and Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society Series B-Methodological 57 (1): 289–300."
+  },
+  {
+    "objectID": "intro.html#hi-1",
+    "href": "intro.html#hi-1",
+    "title": "1  Introduction",
+    "section": "Hi 1",
+    "text": "Hi 1\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\nSome text\n\n\n\n\n\n\n\n\n\n\nSome text\n\n\n\n\nh4\ntext\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "partial/intro.html",
+    "href": "partial/intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "https://quarto.org/docs/authoring/article-layout.html This is a book created from markdown and executable code."
+  },
+  {
+    "objectID": "partial/intro.html#hi",
+    "href": "partial/intro.html#hi",
+    "title": "2  Introduction",
+    "section": "Hi",
+    "text": "Hi\n\n1 some text\nSee Benjamini and Hochberg (1995) for additional discussion of literate programming.\n\n\n\n\nSome text\n\n\n\n\n\n\n\n\n\n\nSome text\n\n\n\n\nh4\ntext\n\n\n\n\nBenjamini, Y., and Y. Hochberg. 1995. “Controlling the False Discovery Rate - a Practical and Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society Series B-Methodological 57 (1): 289–300."
+  },
+  {
+    "objectID": "partial/getting_started.html",
+    "href": "partial/getting_started.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "DAVe: Data Analysis and Visualization engine\n\n\n\n\n\nDAVe, application interactively combines statistics, clustering, data exploration and visualization with machine learning, functional and network analysis to create information and context rich mapped networks. The following manual describes a selection of available workflows. Get ready to connect your data with context!\n\n\n\n\nModules\n\nDAVe is comprised of 10 modules covering: data, plotting, pre-processing, statistics, clustering, dimensional reduction, pathway analysis, predictive modeling, network analysis and reporting domains. Each module contains a calculate, explore, plot and report components.\n\n\n\nActions\n\nCalculate\n\n\nThis tab is used to set the method options and view the results summary and tabular output.\n\n\n\n\nExplore\n\n\nInteractively explore the results.\n\n\n\n\nPlot\n\n\nView and tune your data visualizations.\n\n\n\n\nReport\n\n\nCreate data analysis summaries and reproducible reports."
+  },
+  {
+    "objectID": "partial/quickstart.html#a-select",
+    "href": "partial/quickstart.html#a-select",
+    "title": "Overview",
+    "section": "A Select",
+    "text": "A Select\n\nThe navigation bar is used to select different analyses. Each analysis may also have sub-options. Typical workflows will include choosing modules from the nav bar progressing from left to right e.g. loading the data in Data and then formatting the data for analysis in the Preprocess module."
+  },
+  {
+    "objectID": "partial/quickstart.html#b-controls",
+    "href": "partial/quickstart.html#b-controls",
+    "title": "Overview",
+    "section": "B Controls",
+    "text": "B Controls\n\nThe sidebar is used to select analyses methods, tune visualizations and specify report options."
+  },
+  {
+    "objectID": "partial/quickstart.html#c-workflow",
+    "href": "partial/quickstart.html#c-workflow",
+    "title": "Overview",
+    "section": "C Workflow",
+    "text": "C Workflow\n\n\nThe tabpanel can be used to progress through calculate, explore, plot and report analysis steps. The calculate tab is used to select method options and generate analysis results. The explore tab is used to create interactive plots to explore and summarize objects created in the calculate tab. The plot tab is used to fine-tune visualizations for the report. The report tab is used to collect all methods, results and plot settings and generate a report summarizing all of data analysis methods and results. Each module’s reports can be later combined and edited in the Report module."
+  },
+  {
+    "objectID": "partial/quickstart.html#d-results",
+    "href": "partial/quickstart.html#d-results",
+    "title": "Overview",
+    "section": "D Results",
+    "text": "D Results\n\nThis is the main panel where calculation, exploration, plotting and report results will be output to. Results may include both static and interactive results which can be manipulated further."
+  },
+  {
+    "objectID": "partial/quickstart.html#e-help",
+    "href": "partial/quickstart.html#e-help",
+    "title": "Overview",
+    "section": "E Help",
+    "text": "E Help\n\nSelect this icon to to view instructions for each selected module and analysis workflow step."
+  },
+  {
+    "objectID": "partial/workflows.html",
+    "href": "partial/workflows.html",
+    "title": "Workflows",
+    "section": "",
+    "text": "Data anlysis workflows are encapsulated in domain specific modules. The module results can be linked, visualized and combined into interactive reports.\n\n\nLinking modules\n\nInduvidual module results can be combined. For example, here is an example data worflow showing how to load, preprocess and review the results for your data.\n\n\n\n\n%%{init: {'theme': 'dark' }%%\ngraph LR\n\n    1((1)) --> data[\"fa:fa-database Data \"];\n    data --> 2;\n    2((2)) --> preproc[\"fa:fa-scissors Preprocess \"];\n    3((3)) --> plot[\"fa:fa-braille Plot.\"];\n    4((4)) --> report[\"fa:fa-file-text-o Report\"];\n    preproc --> 3;\n    preproc --> 4;\n\n    classDef green fill:#33a378, color:#fff, stroke:#33a378;\n    classDef blue fill:#4472c4, color:#fff, stroke:#4472c4;\n    class 1 blue;\n    class 2 blue;\n    class 3 blue;\n    class 4 blue;\n    class data green;\n    class preproc green;\n    class plot green;\n    class report green;\n\n\n\n\n\n\n\n\n\n\n\nThe Preprocess module is used to separate the numeric data from its sample (row) and variable (column) meta data. This creates a _data, _row_meta and _col_meta objects for each original data set. An example of these objects relate to one another is shown below.\n\n\n\nThe Preprocess module can also be used to overview and impute missing values.\n\n\n\nModule workflows\n\nEach module uses the same basic workflow. For example, to prepare the data for analyis you can use the preprocess module with the following workflow.\n\n\n\n\n%%{init: {'theme': 'dark'} }%%\ngraph LR\n    1((1)) --> preproc[\"fa:fa-scissors Preprocess\"];\n    2((2)) --> calculate(\"fa:fa-sliders Calculate.\");\n    3((3)) --> explore(\"fa:fa-pencil-square-o Explore.\");\n    4((4))  --> plot(\"fa:fa-bar-chart Plot.\")\n    5((5)) --> report(\"fa:fa-file-text-o Report.\");\n    6((6)) --> save(\"fa:fa-file Save\");\n    preproc --> 4;\n    preproc -->5;\n    preproc --> 2;\n    preproc --> 3;\n    calculate --> 6;\n\n    classDef green fill:#33a378, color:#fff, stroke:#33a378;\n    classDef blue fill:#4472c4, color:#fff, stroke:#4472c4;\n    classDef gray fill:#808080, color:#fff, stroke:#4472c4;\n    class 1 blue;\n    class 2 blue;\n    class 3 blue;\n    class 4 blue;\n    class 5 blue;\n    class 6 blue;\n    class preproc green;\n    class plot gray;\n    class report gray;\n    class explore gray;\n    class calculate gray;\n    class save gray;\n\n\n\n\n\n\n\n\n\n\n\nData analysis options and results can be configured and sumarized in calculate. The results can be visualized using static plot or interactive explore tabs. The methods, results and created visualizations can be summarized in the report. This can be done iteratively to explore and refine the analysis results and summaries. Once the results are finalized the data object can be saved using the controls at the bottom of the calculate menu.\n\n\n\nFull workflow\n\nBelow is an example of how to progress an analysis from data loading, formatting and all the way to creating rich mapped networks.\n\n\n\n\n%%{init: {'theme': 'dark'}}%%\ngraph LR\n\n    1((1)) --> data[\"fa:fa-database Data \"];\n    2((2)) --> preproc[\"fa:fa-scissors Preprocess \"];\n    3((3)) --> stats[\"fa:fa-superscript Statistics. \"];\n    4((4)) --> path[\"fa:fa-flask Pathway \"];\n    5((5)) --> clust[\"fa:fa-snowflake-o Cluster \"];\n    6((6)) --> multi[\"fa:fa-codepen Multivariate.\"];\n    7((7)) --> ml[\"fa:fa-university Model.\"];\n    8((8)) --> net[\"fa:fa-share-alt Network .\"];\n    9((9)) --> report[\"fa:fa-file-text-o Report \"];\n    vis[\"fa:fa-braille Plot.\"];\n    data --> 2;\n    preproc --> 3;\n    preproc --> 5;\n    preproc --> 6; \n    preproc --> 7;\n    stats --> 4;\n    preproc --> 8;\n    stats --> vis;\n    multi --> vis;\n    clust --> vis;\n    ml --> vis;\n    \n\n    classDef green fill:#33a378, color:#fff, stroke:#33a378;\n    classDef blue fill:#4472c4, color:#fff, stroke:#4472c4;\n    class 1 blue;\n    class 2 blue;\n    class 3 blue;\n    class 4 blue;\n    class 5 blue;\n    class 6 blue;\n    class 7 blue;\n    class 8 blue;\n    class 9 blue;\n    class data green;\n    class preproc green;\n    class stats green;\n    class clust green;\n    class multi green;\n    class ml green;\n    class path green;\n    class report green;\n    class net green;\n    class vis green\n\n\n\n\n\n\n\n\n\n\n\n\nAvailable analyses\n\nData\n\nupload data from files or load saved projects\noverview and summarize data components\nmanage saved data\ndownload\n\nPlot\n\ninteractively filter data to plot\ncreate dynamic visualizations\n\nline plots\nscatter plots\nbox plots\n\nmap data to plot options\n\nsize/width\ncolor\nshape\nrow and/or column sub plots\n\nmodify plotting themes, text and legend\n\nPreprocess\n\nmerge numeric data with sample and variable meta data\noverview and impute missing values\n\nStatistics\n\nidentify significant differences between two groups\ngroup summary statistics\nvolcano plots\nviolin and box plots\n\nCluster\n\nhierarchical clustering\n\ncombined samples and variables\nsamples\nvariables\ncorrelations between samples or variables\n\nheatmaps\ndendrograms\n\nMultivariate\n\nPrincipal Components Analysis (PCA)\nVisualize results\n\nscree plots\nscores plot\nloadings plot\nbiplot\noutlier plot\n\n\nPathway\n\nbiochemical pathway enrichment analysis\nbiochemical pathway and fold change visualization\n\nModel\n\nmachine learning model training and validation\n\nclassification\nregression\n\nfeature selection\nmodel ensemble\n\nNetwork\n\nCalculate relationships\n\nbiochemical product to precursor\nmolecular structural similarity\nempirical regularized correlations\n\ninteractive network visualizations\nmap analysis results to network properties\ncombine and modify network relationships and properties"
+  },
+  {
+    "objectID": "partial/data.html#calculate",
+    "href": "partial/data.html#calculate",
+    "title": "2  Data",
+    "section": "Calculate",
+    "text": "Calculate\n\nFormatting\n\nThe data should be formatted into two parts 1) the main data containing sample descriptions and numeric variable data and 2) variable meta data decribing the measurements.\n\n\n\n\n\n\nSelect and view the data as a summary or table.\n\n\n\n\n\n\n\n\nData can be uploaded in the following formats: .csv, project or example.\n\n\n\n\n\n\n\n\nSelected data summary.\n\n\n\n\n\n\n\n\nSelected data table overview.\n\n\n\n\n\n\n\n\nData can be saved as a .csv for download or a project which can be loaded later.\n\n\n\n\n\n\n\n\nDelete data objects."
+  },
+  {
+    "objectID": "partial/preprocess.html",
+    "href": "partial/preprocess.html",
+    "title": "2  Preprocess",
+    "section": "",
+    "text": "The preprocess module is used to merge, filter and prepare the data for analysis.\n\n\nMerge\n\nThis analysis is used to identify experimental design factors and merge numeric and variable metadata. The induvidual data components to merge should be related as shown below. See the preprocess for more details.\n\n\n\n\n\nSelect sample meta data (e.g. non-numeric descriptors of the experimental design) which will be added to the _row_meta object and made available to use in visual mapping and analysis/calculation controls.\n\n\n\n\n\n\n\n\nIdentify and add column or measurement meta data, wherein ID sets the unique row identifier (e.g. row number).\n\n\n\n\n\n\n\n\nView merge summary.\n\n\n\n\n\n\n\n\nVisualize a summary of the merged data.\n\n\n\n\n\n\n\n\nSave the merged data for further analyses.\n\n\n\n\n\n\n\nFilter\n\nThis analysis can be used to identify and remove variables with missing values. Specify a factor group of interest and the missing cutoff or percent acceptible missing for each level in the group. It is also useful to remove non-informative varibles or those with a standard deviation of zero using the remove zero variance option.\n\n\n\n\n\nRemove error prone variables with too many missing values or zero variance. Optionally select groups of samples to evaluate missing values.\n\n\n\n\n\n\n\nImpute all missing values in the data. Replace based on a variety of summaries based on the present values.\n\n\n\n\n\n:::\n\n\nView missing data for each sample and variable, overall and by class. Missing or zero variables shown in red are arranged based on their sample (row) and variable (column) number.\n\n\n\n\n\n:::\n\n\nFlagged variables, or those containing greater or equal percent zero or missing values than the missing cutoff are shown in red for each level of a group `group``.\n\n\n\n\n\n:::\n\n\n\nSave the filtered data for further analyses."
+  },
+  {
+    "objectID": "partial/preprocess.html#reference",
+    "href": "partial/preprocess.html#reference",
+    "title": "2  Preprocess",
+    "section": "Reference",
+    "text": "Reference\n\nMerge\n\nThis analysis is used to identify experimental design factors and merge numeric and variable metadata. The induvidual data components to merge should be related as shown below. See the preprocess for more details.\n\n\n\n\n\nSelect sample meta data (e.g. non-numeric descriptors of the experimental design) which will be added to the _row_meta object and made available to use in visual mapping and analysis/calculation controls.\n\n\n\n\n\n\n\n\nIdentify and add column or measurement meta data, wherein ID sets the unique row identifier (e.g. row number).\n\n\n\n\n\n\n\n\nView merge summary.\n\n\n\n\n\n\n\n\nVisualize a summary of the merged data.\n\n\n\n\n\n\n\n\nSave the merged data for further analyses.\n\n\n\n\n\n\n\nFilter\n\nThis analysis can be used to identify and remove variables with missing values. Specify a factor group of interest and the missing cutoff or percent acceptible missing for each level in the group. It is also useful to remove non-informative varibles or those with a standard deviation of zero using the remove zero variance option.\n\n\n\n\n\nRemove error prone variables with too many missing values or zero variance. Optionally select groups of samples to evaluate missing values.\n\n\n\n\n\n\n\nImpute all missing values in the data. Replace based on a variety of summaries based on the present values.\n\n\n\n\n\n:::\n\n\nView missing data for each sample and variable, overall and by class. Missing or zero variables shown in red are arranged based on their sample (row) and variable (column) number.\n\n\n\n\n\n:::\n\n\nFlagged variables, or those containing greater or equal percent zero or missing values than the missing cutoff are shown in red for each level of a group `group``.\n\n\n\n\n\n:::\n\n\n\nSave the filtered data for further analyses."
+  },
+  {
+    "objectID": "partial/stats.html#two-class",
+    "href": "partial/stats.html#two-class",
+    "title": "3  Statistics",
+    "section": "two-class",
+    "text": "two-class\n\nThis data analysis implements a non-parametric test for differences in means between two groups. This test does not assume normality and can be robust to outliers when testing for differences in means between two groups with small samples sizes. This module can also be used to identify differentially expressed variables between groups and create filtered datasets based on the test p-values Hollander and Wolfe (1973).\n\n\n\n\nIdentify experimental design factor(s) to use for tests and specify variable meta data.\n\n\n\n\n\n\n\n\nSelect significance level (alpha) to use in visualizations and filter the data.\n\n\n\n\n\n\n\n\nView statistical test results.\n\n\n\n\n\n\n\n\nCreate a volcano plot to visualize the relationship between variable fold-changes between groups and test p-values.\n\n\n\n\n\n\n\n\nIdentify variables with large fold-changes between groups and low p-values.\n\n\n\n\n\n\n\n\nSelect one or many variables to generate violin density plots.\n\n\n\n\n\n\n\n\nExplore variable distributions among groups.\n\n\n\n\n\n\n\n\nUse plot to view many variables and overview the plot style for the report.\n\n\n\n\n\n\n\n\nSave results and optionally remove non-significant variables by selecting keep selected.\n\n\n\n\n\n\n\n\n\nHollander, Myles, and Douglas A. Wolfe. 1973. “Nonparametric Statistical Methods.” New York: John Wiley and Sons, 115–20."
+  },
+  {
+    "objectID": "partial/stats.html",
+    "href": "partial/stats.html",
+    "title": "3  Statistics",
+    "section": "",
+    "text": "The statistics module is used to carry out statistical analyses, identify and filter the data based on significant differences between groups.\n\n\ntwo-class\n\nThis data analysis implements a non-parametric test for differences in means between two groups. This test does not assume normality and can be robust to outliers when testing for differences in means between two groups with small samples sizes. This module can also be used to identify differentially expressed variables between groups and create filtered datasets based on the test p-values Hollander and Wolfe (1973).\n\n\n\n\nIdentify experimental design factor(s) to use for tests and specify variable meta data.\n\n\n\n\n\n\n\n\nSelect significance level (alpha) to use in visualizations and filter the data.\n\n\n\n\n\n\n\n\nView statistical test results.\n\n\n\n\n\n\n\n\nCreate a volcano plot to visualize the relationship between variable fold-changes between groups and test p-values.\n\n\n\n\n\n\n\n\nIdentify variables with large fold-changes between groups and low p-values.\n\n\n\n\n\n\n\n\nSelect one or many variables to generate violin density plots.\n\n\n\n\n\n\n\n\nExplore variable distributions among groups.\n\n\n\n\n\n\n\n\nUse plot to view many variables and overview the plot style for the report.\n\n\n\n\n\n\n\n\nSave results and optionally remove non-significant variables by selecting keep selected.\n\n\n\n\n\n\n\n\n\nHollander, Myles, and Douglas A. Wolfe. 1973. “Nonparametric Statistical Methods.” New York: John Wiley and Sons, 115–20."
+  },
+  {
+    "objectID": "partial/cluster.html",
+    "href": "partial/cluster.html",
+    "title": "4  Clustering",
+    "section": "",
+    "text": "This module is used to identified clusters of related groups of samples and variables.\n\n\nHierarchical\n\nThis module is used to carry out hierarchical cluster analysis (HCA) on samples and variables. HCA distance and agglomeration methods can be used to organize the input based on similarity and identify clusters of closely related samples or variables based on the raw data or correlations.\n\n\nCalculate\n\n\n\nUse the nodes menue to specify if samples or variables will be clustered. You can additionally specify row and column group(s) and labels to enrich the plot and explore visualizations.\n\n\n\n\n\n\n\n\nThe methods menue is used to specify a correlation method, set HCA distance and linkage methods and select the number of clusters.\n\n\n\n\n\n\n\n\nView clustering results and sample and/or variable cluster groupings.\n\n\n\n\n\n\n\nExplore and plot\n\n\n\nView cluster results as a heatmap.\n\n\n\n\n\n\n\n\nView cluster results as a sample dendrogram.\n\n\n\n\n\n\n\n\nView cluster results as a variable dendrogram."
+  },
+  {
+    "objectID": "partial/multivariate.html",
+    "href": "partial/multivariate.html",
+    "title": "5  Multivariate",
+    "section": "",
+    "text": "the multivariate module supports dimensional reduction and projection pursuits.\n\n\nPCA\n\nPrincipal components analysis (PCA) can be used to summarise the major modes of variance in the data by fewer and uncorrelated principal components (PCs). It is helpful to analyze how sample and variable meta data is related to PCA sample scores and variable loadings.\n\n\nCalculate\n\n\n\nSpecify the PCA method and normalize the data through centering and scaling.\n\n\n\n\n\n\n\n\nOverview methodsand the variance explained by the PCA model.\n\n\n\n\n\n\n\nPlot and Explore\n\n\n\nSelect from a variety of plot types.\n\n\n\n\n\n\n\n\nThe screeplot shows the variance explained by each PC. The dashed line marks the 1 % variance limit below which components can be ommited.\n\n\n\n\n\n\n\n\nUse cummulative screeplot to view the total % variance explained. The dashed line shows the boundary where 80% of the original variance in the data has been captured by the PCA model.\n\n\n\n\n\n\n\n\nThe diagnostics plot can be used to identify moderate and extreme sample outliers. Large sample leverage denotes a large influence of the samples variance to the identification of the PC components (outliers). The DmodX or highlights moderate multivariate sample differences. Samples showing both high leverage and DmodX should be investigated further.\n\n\n\n\n\n\n\n\nSample scores display multivariate similarities through proximity to other samples in the PCA space.\n\n\n\n\n\n\n\n\nThe loadings plot displays variable similarities.\n\n\n\n\n\n\n\n\nThe plotting menue for scores and loadings can be used to select PCs to view, map meta data to plot colors and group boundaries showing the Hoettlings T2 ellipse and modify plot asthetics.\n\n\n\n\n\n\n\n\nThe biplot can be used to simultaneously visualize sample scores and loadings over layed on top of each other. Variables with extreme loadings (large positive or negative x/y position) have the largest effects on the sample scores (may correspond to low or high values among samples with similairly extreme scores compared to others)."
+  },
+  {
+    "objectID": "partial/model.html",
+    "href": "partial/model.html",
+    "title": "7  Predictive modeling",
+    "section": "",
+    "text": "Model\n\nCreate and optimize machine learning models for classification and regression tasks.\n\n\nCalculate\n\n\n\nSelecting the type of model you would like to create classification or regression will toggle the available variables to predict. Use the filter menu selected to specify which variables should be included in the model based on criteria generated in other modules (e.g. statistical and feature selection).\n\n\n\n\n\n\n\n\nThe model menu is used to specify a single or multiple models to fit to the data. The model hyperparameters can be automatically tuned based on grid size which defines the number or random setting to test. Specific model hyperparameters can be specified using the manual setting. Note when fitting multiple models tuning will be done in the auto mode. The optimize for is used to specify if you want to select the best model based on performance on the training (recommended) or held out test data.\n\n\n\n\n\n\n\n\nThis menu is used to specify the training and test data and model cross-validation parameters. Similar to the model>>tune the cross-validation parameters can be manually or automatically set. For example, the selections shown in the example will randomly select 70% of the data (samples) to fit the model which will then be validated on the 305 held out or test data. The model will be internally cross-validated by splitting the training data into 7 folds and then leaving out each fold during the model fit and then testing the performance on the held-out fold. This process will be repeated 3 times and the performance on the training data will be summarized over all the results.\n\n\n\n\n\n\n\n\nModel methods amd performance summary. For eaxample, this show three models were fitted, RandomForest (rf), Partial Least Squares projections to latent structures (pls) and radial kernel Support Vectoem Machine (svmRadial). The top performing model (rf) is highlighted in green.\n\n\n\n\n\n\n\nPlot and Explore\n\n\n\nModel performance for the training and test data and training time can be compared. The y-axis shows the selected model performance metric and x-axis the training time.\n\n\n\n\n\n\n\n\nThis plot is used to visualize the impact of hyperparameters on model performance.\n\n\n\n\n\n\n\n\nIdentify the proportion of miss classified samples for classification models using a confusion matrix. Optionally show actual counts or percent for correct and incorrect classifications.\n\n\n\n\n\n\n\n\nVisualize variable’s importance or contribution to the model’s performance. Importance for multiple models is calculated based weighted metric of the model’s performance and each variables importance in the model. Importance based on multiple models displays the variables consensus rank (y-axis) across all models and the actual importance in the single highest performing model (x-axis).\n\n\n\n\n\n\n\n\nFeature selection\n\nFeature selection is used to identify variables which maximize model performance. Optimal variables are identified using recursive feature elimination wherein many models are built from subsets of variables and an optimal model is identified based on which subset yielded the highest performing model.\n\n\nCalculate\n\n\n\nThe data menu is used to specify the model type and select target and predictor variables.\n\n\n\n\n\n\n\n\nThe optimize menu is used to specify the algorithm used for the selection. The metric specifies which performance criteria will be used to identify the optimal subset of variables.\n\n\n\n\n\n\n\n\nThe validate menu is used to specify the model cross-validation parameters and size of the automatic hyperparameter tuning grid.\n\n\n\n\n\n\n\n\nView feature selection methods and results.\n\n\n\n\n\n\n\nPlot and Explore\n\n\n\nThis visualization displays model performance (y-axis) based on the subset of variables (x-axis). The optimal model is highlighted in red. The plot controls can be used to specify which model metric will be used for the visualization (use calculate to optimized subsets for that metric). The optimal variables can be selected based on the subset function. Options include PickSizeBest which specifies the subset which maximized or minimized the chosen performance metric or PickSizeTolerance which allows for models with less parameters (variables), which are also worse than the optimal model. The accepted decrease in performance is specified as a percent of the metric in tolerance.\n\n\n\n\n\n\n\n\nThis visualizations shows the selected variables (red) importance compared to those which were removed (blue).\n\n\n\n\n\n\n\n\nAdd selected features filter to the row_metadata or remove all non-selected variables from the data set keep selected. Common workflows might include feature selection followed by training wherein the rfe_selected filter can be used to select variables in the model >> data >> filter >> selected menu."
+  },
+  {
+    "objectID": "partial/pathway.html",
+    "href": "partial/pathway.html",
+    "title": "6  Pathway Enrichment",
+    "section": "",
+    "text": "The pathway module is used to test for significant enrichment in biological pathways and visualize the results.\n\n\nEnrichment\n\nThis analysis implements a hypergeometric test to identify significant enrichment in KEGG biochemical pathways based on statistical test p-values. Enrichment is calculated based on the KEGG database and reference (ko) organism.\n\n\nCalculate\n\n\n\nSelect the name of the column with KEGG id for each variable. Filter which variables will be tested for pathway enrichment based on statistical test p-values and significance cut off.\n\n\n\n\n\n\n\n\nFilter enrichment results based on the p-value cutoff and false dicovery rate (FDR) adjustment.\n\n\n\n\n\n\n\n\nOverview the enrichment test methods and tabular results where: map is the KEGG pathway map id, n_hits is the number of significant variables from this pathway, n_cpd the number of compounds in the pathway and prct is the percent of enriched variables compared to total pathway variables. Selection of interesting pathways to investigate further could involve: 1) verifying that the pathway has a moderate minimum number of variables (e.g. > 10) 2) identifying low p-value and high prct enriched pathways 3) visualizing the network topology of enriched variables in the pathway (e.g. look for metabolic proximity of cha ges which may signify a functional module) . NOTE: Some very large and generic pathways such as Metabolic pathways can take a few minutes to render.\n\n\n\n\n\n\n\nPlot\n\n\n\nSelect pathway name and identify the column to use as the fold-change to view variable changes mapped to the pathway.\n\n\n\n\n\n\n\n\nThe fold-changes normalized to between -1 and 1 are mapped onto pathway entities as described in the color bar in the top right corner.\n\n\n\n\n\n\n\nReport\n\n\n\nSelect the number of top pathways (based on p-value) to show in table outputs and which pathways to show visualizations of."
+  },
+  {
+    "objectID": "partial/network.html",
+    "href": "partial/network.html",
+    "title": "8  Network Analysis",
+    "section": "",
+    "text": "Calculate emprical regularized correlation, biochemical relationships and structural similarity networks. Each module supports rich static, interactive and dynamic network visualizations.\n\n\nTranslate\n\nTranslate between > 200 bichemical identifiers.\n\n\nCalculate\n\n\n\nSelect translation options. The identifier selects the column in the col_meta to translate. Use from and to to specify the identify of the selected identifier and what new identifier it should be translated to.\n\n\n\n\n\n\n\n\nView translation results.\n\n\n\n\n\n\n\n\nMapping\n\nCombine and create variable mappings to add to network visualization node and edge properties.\n\n\nCalculate\n\n\n\nMap the log base 2 transformed fold-change to its absolute value and sign. This is useful to normalize increases and decreases and encode their magnitude and direction of change using separate asthetics.\n\n\n\n\n\n\n\n\nMap the significance of a p-value to a binary (e.g. true or false) outcome. This is useful to separate asthetics for significant and non-significant fold-changes. The following examples would evaluate if the p-value is less than or equal to 0.05.\n\n\n\n\n\n\n\n\nCombine mapped variables. This is useful to fine-tune asthetics based on custom combinations of mappings.\n\n\n\n\n\n\n\n\nView the results of the mapping process. Note you first need to save the results from fold-change and p-values prior to using them with the combine transformation.\n\n\n\n\n\n\n\n\nCorrelation\n\nThis module is used to create and regularized correlation networks (huge?).\n\n\nCalculate\n\n\n\nSelect correlation type and if p-values should be False discovery rate Benjamini and Hochberg (1995) corrected.\n\n\n\n\n\n\n\n\nSelect regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic) (huge?). Note you can also manually select the regularization lambda (higher lambda is more strict), but this needs to be done after a model is calculated. If no edges are returned using manual then try a lowe or less stict regularization.\n\n\n\n\n\n\n\n\nView methods and summary for the calculated network.\n\n\n\n\n\n\n\n\nBiochemical\n\nThis module is used to calculate and biochemcial networks. Metabolomic precursor to product relationships are based on KEGG identifiers.\n\n\nCalculate\n\n\n\nSelect KEGG identifier column name in the data.\n\n\n\n\n\n\n\n\nView methods and summary for the calculated network.\n\n\n\n\n\n\n\n\nStructural\n\nThis module is used to calculate and structural simialrity networks. Metabolite structural similarities are calculated based on overlap in Pubchem structural fingerprints defined by compound identifiers or CID\n\n\nCalculate\n\n\n\nSelect Pubchem CID identifier column name in the data.\n\n\n\n\n\n\n\n\nView methods and summary for the calculated network.\n\n\n\n\n\n\n\n\nEnrich\n\nThis module is used to combine and visualize networks.\n\n\nCalculate\n\n\n\nSelect networks to combine and visualize. Use single edges to remove duplicate edges from the combined edge lists.\n\n\n\n\n\n\n\n\nUpdate network node attributes based on another compatible data set.\n\n\n\n\n\n\n\n\nView methods and summary for the calculated network.\n\n\n\n\n\n\n\nVisualize\n\nVisualize the created networks. Note the same visualization options are also available for the correlation, biochemical and structural modules.\n\n\n\n\nVisualize and modify network node attributes.\n\n\n\n\n\n\n\n\nModify and filter edges or relationships. Use this module to filter edges based on structural similarity (e.g. >0.8) or correlation strength.\n\n\n\n\n\n\n\n\nCustomize network global properties.\n\n\n\n\n\n\n\n\nCreate static plots which will be featured in the report.\n\n\n\n\n\n\n\n\nCreate interactive plots which allow pan zoom, on hover annotations and control of which nodes and edges are shown.\n\n\n\n\n\n\n\n\nCreate idynamic plots which highlight node connections, on hover annotations, moving nodes and look up of nodes of interest.\n\n\n\n\n\n\n\n\n\nBenjamini, Y., and Y. Hochberg. 1995. “Controlling the False Discovery Rate - a Practical and Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society Series B-Methodological 57 (1): 289–300."
+  },
+  {
+    "objectID": "partial/dave_network_to_cytoscape.html",
+    "href": "partial/dave_network_to_cytoscape.html",
+    "title": "Publication quality networks",
+    "section": "",
+    "text": "Creating networks in Cystoscape\n\n\nThe following example shows how to use Cytoscape (v3.7.2) to create publication ready networks from assets calculated in DAVe. This example will use two components the edge_list and the node_data files.\n\n\nData\n\nedge_list.csv\n\n\n\nnode_data.csv\n\n\n\n\nUpload\n\nEdge list\n\nFirst step is to load the edge_list.\n\n\nIn cytoscape select File >> Import >> network from File Upload and then select the edge_list.csv file.\n\n\n\nSet from and to columns\n\n\n\nfrom set to Source Node\n\n\n\nto set to Target Node\n\n\n\nSelect OK once the source and target columns are identified.\n\n\nOverview network\n\n\n\n\nNode attributes\n\nNext load the node _data. Select File >> Import >> Table from File\n\n\n\nSelect the ID column as the variable Key\n\n\n\n\n\nDefine mappings\n\nThe uploaded node attributes should now be available to edit the network node and edge visual properties.\n\n\n\nSpecify the node and edge visual properties.\n\n\n\nTake a look at the example cytoscape.cys file for how each of the data columns were mapped to the network."
+  }
+]

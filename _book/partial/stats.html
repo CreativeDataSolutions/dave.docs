@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dave.docs - 3&nbsp; Statistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../partial/cluster.html" rel="next">
+<link href="../partial/preprocess.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">dave.docs</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/getting_started.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/quickstart.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/workflows.html" class="sidebar-item-text sidebar-link">Workflows</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/preprocess.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/stats.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/cluster.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clustering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#two-class" id="toc-two-class" class="nav-link active" data-scroll-target="#two-class"><span class="txbox_green">two-class</span></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="the-statistics-module-is-used-to-carry-out-statistical-analyses-identify-and-filter-the-data-based-on-significant-differences-between-groups." class="level5">
+<h5 class="anchored" data-anchor-id="the-statistics-module-is-used-to-carry-out-statistical-analyses-identify-and-filter-the-data-based-on-significant-differences-between-groups.">The <span class="txbox_green">statistics</span> module is used to carry out statistical analyses, identify and filter the data based on significant differences between groups.</h5>
+</section>
+<section id="two-class" class="level3">
+<h3 class="anchored" data-anchor-id="two-class"><span class="txbox_green">two-class</span></h3>
+<section id="this-data-analysis-implements-a-non-parametric-test-for-differences-in-means-between-two-groups.-this-test-does-not-assume-normality-and-can-be-robust-to-outliers-when-testing-for-differences-in-means-between-two-groups-with-small-samples-sizes.-this-module-can-also-be-used-to-identify-differentially-expressed-variables-between-groups-and-create-filtered-datasets-based-on-the-test-p-values-kruskal." class="level5">
+<h5 class="anchored" data-anchor-id="this-data-analysis-implements-a-non-parametric-test-for-differences-in-means-between-two-groups.-this-test-does-not-assume-normality-and-can-be-robust-to-outliers-when-testing-for-differences-in-means-between-two-groups-with-small-samples-sizes.-this-module-can-also-be-used-to-identify-differentially-expressed-variables-between-groups-and-create-filtered-datasets-based-on-the-test-p-values-kruskal.">This data analysis implements a non-parametric test for differences in means between two groups. This test does not assume normality and can be robust to outliers when testing for differences in means between two groups with small samples sizes. This module can also be used to identify differentially expressed variables between groups and create filtered datasets based on the test p-values <span class="citation" data-cites="kruskal">Hollander and Wolfe (<a href="../references.html#ref-kruskal" role="doc-biblioref">1973</a>)</span>.</h5>
+</section>
+<div class="columns">
+<div class="column">
+<section id="identify-experimental-design-factors-to-use-for-tests-and-specify-variable-meta-data." class="level5">
+<h5 class="anchored" data-anchor-id="identify-experimental-design-factors-to-use-for-tests-and-specify-variable-meta-data.">Identify experimental design factor(s) to use for tests and specify variable meta data.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/design.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="select-significance-level-alpha-to-use-in-visualizations-and-filter-the-data." class="level5">
+<h5 class="anchored" data-anchor-id="select-significance-level-alpha-to-use-in-visualizations-and-filter-the-data.">Select significance level (alpha) to use in visualizations and filter the data.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/filter.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="view-statistical-test-results." class="level5">
+<h5 class="anchored" data-anchor-id="view-statistical-test-results.">View statistical test results.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/results.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="create-a-volcano-plot-to-visualize-the-relationship-between-variable-fold-changes-between-groups-and-test-p-values." class="level5">
+<h5 class="anchored" data-anchor-id="create-a-volcano-plot-to-visualize-the-relationship-between-variable-fold-changes-between-groups-and-test-p-values.">Create a volcano plot to visualize the relationship between variable fold-changes between groups and test p-values.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/volcanoe.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="identify-variables-with-large-fold-changes-between-groups-and-low-p-values." class="level5">
+<h5 class="anchored" data-anchor-id="identify-variables-with-large-fold-changes-between-groups-and-low-p-values.">Identify variables with large fold-changes between groups and low p-values.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/volcanoe_explore.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="select-one-or-many-variables-to-generate-violin-density-plots." class="level5">
+<h5 class="anchored" data-anchor-id="select-one-or-many-variables-to-generate-violin-density-plots.">Select one or many variables to generate violin density plots.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/violin.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="explore-variable-distributions-among-groups." class="level5">
+<h5 class="anchored" data-anchor-id="explore-variable-distributions-among-groups.">Explore variable distributions among groups.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/violin_explore.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="use-plot-to-view-many-variables-and-overview-the-plot-style-for-the-report." class="level5">
+<h5 class="anchored" data-anchor-id="use-plot-to-view-many-variables-and-overview-the-plot-style-for-the-report.">Use <span class="txbox_green" style="background-color: #808080; !important;">plot</span> to view many variables and overview the plot style for the <span class="txbox_green" style="background-color: #808080; !important;">report</span>.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/violin_plot.png" class="bordered img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<section id="save-results-and-optionally-remove-non-significant-variables-by-selecting-keep-selected." class="level5">
+<h5 class="anchored" data-anchor-id="save-results-and-optionally-remove-non-significant-variables-by-selecting-keep-selected.">Save results and optionally remove non-significant variables by selecting <code>keep selected</code>.</h5>
+</section>
+</div><div class="column">
+<p><img src="img/dave.stat/save.png" class="bordered img-fluid"></p>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-kruskal" class="csl-entry" role="doc-biblioentry">
+Hollander, Myles, and Douglas A. Wolfe. 1973. <span>“Nonparametric Statistical Methods.”</span> <em>New York: John Wiley and Sons</em>, 115–20.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../partial/preprocess.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preprocess</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../partial/cluster.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clustering</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

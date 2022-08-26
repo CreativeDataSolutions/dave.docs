@@ -1,0 +1,204 @@
+---
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    toc-depth: 4 # default is 3
+    number-sections: false
+    anchor-sections: true
+    smooth-scroll: true
+    css: ../style.css
+---
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+suppressPackageStartupMessages(library('dave.help'))
+```
+
+# Predictive modeling
+
+### [Model]{.txbox_green}
+##### Create and optimize machine learning models for classification and regression tasks.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Selecting the type of model you would like to create `classification` or `regression` will toggle the available variables to predict. Use the filter menu `selected` to specify which variables should be included in the model based on criteria generated in other modules (e.g. statistical and feature selection).
+
+::: 
+
+::: column 
+![](img/dave.ml/model/data_menue.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### The `model` menu is used to specify a single or multiple models to fit to the data. The model hyperparameters can be automatically tuned based on `grid size` which defines the number or random setting to test. Specific model hyperparameters can be specified using the `manual` setting. Note when fitting multiple models tuning will be done in the `auto` mode. The `optimize for` is used to specify if you want to select the best model based on performance on the `training` (recommended) or held out `test` data.
+::: 
+
+::: column 
+![](img/dave.ml/model/model_menue.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### This menu is used to specify the `training` and `test` data and model cross-validation parameters. Similar to the `model>>tune` the cross-validation parameters can be `manually` or `automatically` set. For example, the selections shown in the example will randomly select 70% of the data (samples) to fit the model which will then be validated on the 305 held out or `test` data. The model will be internally cross-validated by splitting the `training` data into `7` folds and then leaving out each fold during the model fit and then testing the performance on the held-out fold. This process will be repeated `3` times and the performance on the `training` data will be summarized over all the results.
+
+::: 
+
+::: column 
+![](img/dave.ml/model/train_menue.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Model methods amd performance summary. For eaxample, this show three models were fitted, RandomForest (rf), Partial Least Squares projections to latent structures (pls) and radial kernel Support Vectoem Machine (svmRadial). The top performing model (rf) is highlighted in green.
+
+::: 
+
+::: column 
+![](img/dave.ml/model/results.png){.bordered}
+:::
+:::
+
+#### [Plot and Explore]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### Model performance for the `training` and `test` data and training time can be compared. The `y-axis` shows the selected model performance metric and `x-axis` the training time.
+
+::: 
+
+::: column 
+![](img/dave.ml/model/perf_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### This plot is used to visualize the impact of hyperparameters on model performance.
+
+::: 
+
+::: column 
+![](img/dave.ml/model/model_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Identify the proportion of miss classified samples for classification models using a `confusion matrix`. Optionally show actual counts or percent for correct and incorrect classifications.
+
+::: 
+
+::: column 
+![](img/dave.ml/model/confusion_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### Visualize variable's importance or contribution to the model's performance. Importance for multiple models is calculated based weighted metric of the model’s performance and each variables importance in the model. Importance based on multiple models displays the variables consensus rank (y-axis) across all models and the actual importance in the single highest performing model (x-axis).
+
+::: 
+
+::: column 
+![](img/dave.ml/model/importance_plot.png){.bordered}
+:::
+:::
+
+### [Feature selection]{.txbox_green}
+
+##### `Feature selection` is used to identify variables which maximize model performance. Optimal variables are identified using recursive feature elimination wherein many models are built from subsets of variables and an optimal model is identified based on which subset yielded the highest performing model.
+
+#### [Calculate]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### The `data` menu is used to specify the model type and select target and predictor variables.
+
+::: 
+
+::: column 
+![](img/dave.ml/select/data_menu.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### The `optimize` menu is used to specify the algorithm used for the selection. The metric specifies which performance criteria will be used to identify the optimal subset of variables.
+::: 
+
+::: column 
+![](img/dave.ml/select/optimize_menu.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### The `validate` menu is used to specify the model cross-validation parameters and size of the automatic hyperparameter tuning grid.
+
+::: 
+
+::: column 
+![](img/dave.ml/select/validate_menu.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### View feature selection methods and results.
+::: 
+
+::: column 
+![](img/dave.ml/select/results.png){.bordered}
+:::
+:::
+
+#### [Plot and Explore]{.txbox_gray}
+
+::::: columns 
+::: column 
+
+##### This visualization displays model performance (y-axis) based on the subset of variables (x-axis). The optimal model is highlighted in red. The plot controls can be used to specify which model metric will be used for the visualization (use `calculate` to optimized subsets for that metric). The optimal variables can be selected based on the `subset function`. Options include `PickSizeBest` which specifies the subset which maximized or minimized the chosen performance metric or `PickSizeTolerance` which allows for models with less parameters (variables), which are also worse than the optimal model. The accepted decrease in performance is specified as a percent of the metric in `tolerance`.
+::: 
+
+::: column 
+![](img/dave.ml/select/overall_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+
+##### This visualizations shows the selected variables (red) importance compared to those which were removed (blue).
+::: 
+
+::: column 
+![](img/dave.ml/select/importance_plot.png){.bordered}
+:::
+:::
+
+::::: columns 
+::: column 
+##### Add selected features filter to the `row_metadata` or remove all non-selected variables from the data set `keep selected`. Common workflows might include `feature selection` followed by `training` wherein the `rfe_selected` filter can be used to select variables in the `model >> data >> filter >> selected` menu.
+::: 
+
+::: column 
+![](img/dave.ml/select/save.png){.bordered}
+:::
+:::

@@ -1,0 +1,68 @@
+---
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    toc-depth: 4 # default is 3
+    number-sections: false
+    anchor-sections: true
+    smooth-scroll: true
+    css: ../style.css
+---
+
+# Introduction {.unnumbered}
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+params<-list(
+  version= '0.2',
+  modules = c( 'Data, Plotting, Pre-processing, Statistics, Clustering, Dimensional reduction, Pathway analysis, Predictive modeling, Network analysis, Reporting'))
+
+
+library(shiny)
+library(dave.help)
+mods<-parse_modules(params$modules) #
+htmltools::tagList(rmarkdown::html_dependency_font_awesome()) # required for icons
+```
+
+
+
+`r module_title('DAVe: Data Analysis and Visualization engine')`
+
+![](img/dave.main/full.png){.center}
+
+##### DAVe, application interactively combines statistics, clustering, data exploration and visualization with machine learning, functional and network analysis to create information and context rich mapped networks. The following manual describes a selection of available workflows. Get ready to connect your data with context!
+
+<br>
+
+![](img/dave.main/nav.png){.center}
+
+### Modules
+##### DAVe is comprised of `r mods$length` modules covering: `r grammatical_paste(mods$modules) %>% tolower()` domains. Each module contains a `calculate`, `explore`, `plot` and `report` components.
+
+### Actions
+#### `r dcr_gr('Calculate')` 
+
+<hr>
+##### This tab is used to set the method options and view the results summary and tabular output.
+![](img/dave.ml/model/results.png){.center}
+
+#### `r dcr_gr('Explore')` 
+
+<hr>
+
+##### Interactively explore the results.
+![](img/dave.main/explore.png){.center}
+
+#### `r dcr_gr('Plot')`
+
+<hr>
+##### View and tune your data visualizations.
+![](img/dave.main/plot.png){.center}
+
+#### `r dcr_gr('Report')`
+
+<hr>
+
+##### Create data analysis summaries and reproducible reports.
+![](img/dave.main/dave_report.png){.center}
+
