@@ -92,7 +92,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">User Guide</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -169,8 +169,16 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#merge" id="toc-merge" class="nav-link active" data-scroll-target="#merge"><span class="txbox_green">Merge</span></a></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="txbox_green">Filter</span></a></li>
+  <li><a href="#merge" id="toc-merge" class="nav-link active" data-scroll-target="#merge"><span class="txbox_green">Merge</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate" id="toc-calculate" class="nav-link" data-scroll-target="#calculate"><span class="txbox_gray">Calculate</span></a></li>
+  <li><a href="#explore-and-plot" id="toc-explore-and-plot" class="nav-link" data-scroll-target="#explore-and-plot"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">Plot</span></a></li>
+  </ul></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="txbox_green">Filter</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate-1" id="toc-calculate-1" class="nav-link" data-scroll-target="#calculate-1"><span class="txbox_gray">Calculate</span></a></li>
+  <li><a href="#explore-and-plot-1" id="toc-explore-and-plot-1" class="nav-link" data-scroll-target="#explore-and-plot-1"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">Plot</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -205,6 +213,8 @@ ul.task-list{list-style: none;}
 <h5 class="anchored" data-anchor-id="this-analysis-is-used-to-identify-experimental-design-factors-and-merge-numeric-and-variable-metadata.-the-induvidual-data-components-to-merge-should-be-related-as-shown-below.-see-the-preprocess-for-more-details.">This analysis is used to identify experimental design factors and merge numeric and variable metadata. The induvidual data components to merge should be related as shown below. See the <span class="txbox_green">preprocess</span> for more details.</h5>
 <p><img src="img/dave.preproc/data_diagram2.png" class="bordered img-fluid"></p>
 </section>
+<section id="calculate" class="level4">
+<h4 class="anchored" data-anchor-id="calculate"><span class="txbox_gray">Calculate</span></h4>
 <div class="columns">
 <div class="column">
 <section id="select-sample-meta-data-e.g.-non-numeric-descriptors-of-the-experimental-design-which-will-be-added-to-the-_row_meta-object-and-made-available-to-use-in-visual-mapping-and-analysiscalculation-controls." class="level5">
@@ -232,6 +242,9 @@ ul.task-list{list-style: none;}
 <p><img src="img/dave.preproc/preproc_merge_results.png" class="bordered img-fluid"></p>
 </div>
 </div>
+</section>
+<section id="explore-and-plot" class="level4">
+<h4 class="anchored" data-anchor-id="explore-and-plot"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">Plot</span></h4>
 <div class="columns">
 <div class="column">
 <section id="visualize-a-summary-of-the-merged-data." class="level5">
@@ -251,12 +264,14 @@ ul.task-list{list-style: none;}
 </div>
 </div>
 </section>
+</section>
 <section id="filter" class="level3">
 <h3 class="anchored" data-anchor-id="filter"><span class="txbox_green">Filter</span></h3>
 <section id="this-analysis-can-be-used-to-identify-and-remove-variables-with-missing-values.-specify-a-factor-group-of-interest-and-the-missing-cutoff-or-percent-acceptible-missing-for-each-level-in-the-group.-it-is-also-useful-to-remove-non-informative-varibles-or-those-with-a-standard-deviation-of-zero-using-the-remove-zero-variance-option." class="level5">
 <h5 class="anchored" data-anchor-id="this-analysis-can-be-used-to-identify-and-remove-variables-with-missing-values.-specify-a-factor-group-of-interest-and-the-missing-cutoff-or-percent-acceptible-missing-for-each-level-in-the-group.-it-is-also-useful-to-remove-non-informative-varibles-or-those-with-a-standard-deviation-of-zero-using-the-remove-zero-variance-option.">This analysis can be used to identify and remove variables with missing values. Specify a factor <code>group</code> of interest and the <code>missing cutoff</code> or percent acceptible missing for each level in the <code>group</code>. It is also useful to remove non-informative varibles or those with a standard deviation of zero using the <code>remove zero variance</code> option.</h5>
-<p><img src="img/dave.preproc/preproc_missing.png" class="bordered img-fluid"></p>
 </section>
+<section id="calculate-1" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-1"><span class="txbox_gray">Calculate</span></h4>
 <div class="columns">
 <div class="column">
 <section id="remove-error-prone-variables-with-too-many-missing-values-or-zero-variance.-optionally-select-groups-of-samples-to-evaluate-missing-values." class="level5">
@@ -266,33 +281,36 @@ ul.task-list{list-style: none;}
 <p><img src="img/dave.preproc/preproc_missing_filter.png" class="bordered img-fluid"></p>
 </div>
 </div>
+<div class="columns">
 <div class="column">
 <section id="impute-all-missing-values-in-the-data.-replace-based-on-a-variety-of-summaries-based-on-the-present-values." class="level5">
 <h5 class="anchored" data-anchor-id="impute-all-missing-values-in-the-data.-replace-based-on-a-variety-of-summaries-based-on-the-present-values.">Impute all missing values in the data. Replace based on a variety of summaries based on the present values.</h5>
 </section>
-</div>
-<div class="column">
+</div><div class="column">
 <p><img src="img/dave.preproc/preproc_missing_impute1.png" class="bordered img-fluid"></p>
 </div>
-<p>:::</p>
+</div>
+</section>
+<section id="explore-and-plot-1" class="level4">
+<h4 class="anchored" data-anchor-id="explore-and-plot-1"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">Plot</span></h4>
+<div class="columns">
 <div class="column">
 <section id="view-missing-data-for-each-sample-and-variable-overall-and-by-class.-missing-or-zero-variables-shown-in-red-are-arranged-based-on-their-sample-row-and-variable-column-number." class="level5">
 <h5 class="anchored" data-anchor-id="view-missing-data-for-each-sample-and-variable-overall-and-by-class.-missing-or-zero-variables-shown-in-red-are-arranged-based-on-their-sample-row-and-variable-column-number.">View missing data for each sample and variable, overall and by class. Missing or zero variables shown in red are arranged based on their sample (row) and variable (column) number.</h5>
 </section>
-</div>
-<div class="column">
+</div><div class="column">
 <p><img src="img/dave.preproc/preproc_missing_plot1.png" class="bordered img-fluid"></p>
 </div>
-<p>:::</p>
+</div>
+<div class="columns">
 <div class="column">
 <section id="flagged-variables-or-those-containing-greater-or-equal-percent-zero-or-missing-values-than-the-missing-cutoff-are-shown-in-red-for-each-level-of-a-group-group." class="level5">
 <h5 class="anchored" data-anchor-id="flagged-variables-or-those-containing-greater-or-equal-percent-zero-or-missing-values-than-the-missing-cutoff-are-shown-in-red-for-each-level-of-a-group-group.">Flagged variables, or those containing greater or equal percent zero or missing values than the <code>missing cutoff</code> are shown in red for each level of a group `group``.</h5>
 </section>
-</div>
-<div class="column">
+</div><div class="column">
 <p><img src="img/dave.preproc/preproc_missing_plot2.png" class="bordered img-fluid"></p>
 </div>
-<p>:::</p>
+</div>
 <div class="columns">
 <div class="column">
 <section id="save-the-filtered-data-for-further-analyses." class="level5">
@@ -304,6 +322,7 @@ ul.task-list{list-style: none;}
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
