@@ -111,7 +111,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">User Guide</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -188,7 +188,11 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#two-class" id="toc-two-class" class="nav-link active" data-scroll-target="#two-class"><span class="txbox_green">two-class</span></a></li>
+  <li><a href="#two-class" id="toc-two-class" class="nav-link active" data-scroll-target="#two-class"><span class="txbox_green">two-class</span></a>
+  <ul class="collapse">
+  <li><a href="#calculate" id="toc-calculate" class="nav-link" data-scroll-target="#calculate"><span class="txbox_gray">Calculate</span></a></li>
+  <li><a href="#explore-and-plot" id="toc-explore-and-plot" class="nav-link" data-scroll-target="#explore-and-plot"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">plot</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -222,6 +226,8 @@ div.csl-indent {
 <section id="this-data-analysis-implements-a-non-parametric-test-for-differences-in-means-between-two-groups.-this-test-does-not-assume-normality-and-can-be-robust-to-outliers-when-testing-for-differences-in-means-between-two-groups-with-small-samples-sizes.-this-module-can-also-be-used-to-identify-differentially-expressed-variables-between-groups-and-create-filtered-datasets-based-on-the-test-p-values-kruskal." class="level5">
 <h5 class="anchored" data-anchor-id="this-data-analysis-implements-a-non-parametric-test-for-differences-in-means-between-two-groups.-this-test-does-not-assume-normality-and-can-be-robust-to-outliers-when-testing-for-differences-in-means-between-two-groups-with-small-samples-sizes.-this-module-can-also-be-used-to-identify-differentially-expressed-variables-between-groups-and-create-filtered-datasets-based-on-the-test-p-values-kruskal.">This data analysis implements a non-parametric test for differences in means between two groups. This test does not assume normality and can be robust to outliers when testing for differences in means between two groups with small samples sizes. This module can also be used to identify differentially expressed variables between groups and create filtered datasets based on the test p-values <span class="citation" data-cites="kruskal">Hollander and Wolfe (<a href="../references.html#ref-kruskal" role="doc-biblioref">1973</a>)</span>.</h5>
 </section>
+<section id="calculate" class="level4">
+<h4 class="anchored" data-anchor-id="calculate"><span class="txbox_gray">Calculate</span></h4>
 <div class="columns">
 <div class="column">
 <section id="identify-experimental-design-factors-to-use-for-tests-and-specify-variable-meta-data." class="level5">
@@ -249,6 +255,9 @@ div.csl-indent {
 <p><img src="img/dave.stat/results.png" class="bordered img-fluid"></p>
 </div>
 </div>
+</section>
+<section id="explore-and-plot" class="level4">
+<h4 class="anchored" data-anchor-id="explore-and-plot"><span class="txbox_gray">Explore</span> and <span class="txbox_gray">plot</span></h4>
 <div class="columns">
 <div class="column">
 <section id="create-a-volcano-plot-to-visualize-the-relationship-between-variable-fold-changes-between-groups-and-test-p-values." class="level5">
@@ -310,6 +319,7 @@ div.csl-indent {
 Hollander, Myles, and Douglas A. Wolfe. 1973. <span>“Nonparametric Statistical Methods.”</span> <em>New York: John Wiley and Sons</em>, 115–20.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
