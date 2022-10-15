@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -56,6 +61,11 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link href="../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet">
+<link href="../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet">
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../style.css">
@@ -92,7 +102,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">User Guide</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -165,13 +175,13 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#a-select" id="toc-a-select" class="nav-link active" data-scroll-target="#a-select"><span class="numberCircle">A</span> <span class="txbox_blue">Select</span></a></li>
   <li><a href="#b-controls" id="toc-b-controls" class="nav-link" data-scroll-target="#b-controls"><span class="numberCircle">B</span> <span class="txbox_blue">Controls</span></a></li>
-  <li><a href="#c-workflow" id="toc-c-workflow" class="nav-link" data-scroll-target="#c-workflow"><span class="numberCircle">C</span> <span class="txbox_blue">Workflow</span></a></li>
+  <li><a href="#c-workflows" id="toc-c-workflows" class="nav-link" data-scroll-target="#c-workflows"><span class="numberCircle">C</span> <span class="txbox_blue">Workflows</span></a></li>
   <li><a href="#d-results" id="toc-d-results" class="nav-link" data-scroll-target="#d-results"><span class="numberCircle">D</span> <span class="txbox_blue">Results</span></a></li>
   <li><a href="#e-help" id="toc-e-help" class="nav-link" data-scroll-target="#e-help"><span class="numberCircle">E</span> <span class="txbox_blue">Help</span></a></li>
   </ul>
@@ -197,9 +207,60 @@ ul.task-list{list-style: none;}
 </header>
 
 <div class="cell">
+<div class="cell-output-display">
 
 </div>
-<p><img src="img/dave.main/help_net_0.png" class="bordered img-fluid"></p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'theme': 'dark'}}%%
+graph LR
+
+    1((Global Utilities)) --&gt; data["fa:fa-database Data #9679;"];
+    2((Modules)) --&gt;1
+    1 --&gt; report["fa:fa-file-text-o Report #9679;"];
+    1 --&gt; vis["fa:fa-braille Plot #9679;"];
+    2 --&gt; preproc["fa:fa-scissors Preprocess #9679;"];
+    2 --&gt; stats["fa:fa-superscript Statistics #9679;"];
+    2 --&gt; path["fa:fa-flask Pathway #9679;"];
+    2 --&gt; clust["fa:fa-snowflake-o Cluster #9679;"];
+    2 --&gt; multi["fa:fa-codepen Multivariate #9679;"];
+    2 --&gt; ml["fa:fa-university Model #9679;"];
+    2 --&gt; net["fa:fa-share-alt Network #9679;"];
+   
+
+    classDef green fill:#33a378, color:#fff, stroke:#33a378;
+    classDef blue fill:#4472c4, color:#fff, stroke:#4472c4;
+    class 1 blue;
+    class 2 blue;
+    class 3 blue;
+    class 4 blue;
+    class 5 blue;
+    class 6 blue;
+    class 7 blue;
+    class 8 blue;
+    class 9 blue;
+    class data green;
+    class preproc green;
+    class stats green;
+    class clust green;
+    class multi green;
+    class ml green;
+    class path green;
+    class report green;
+    class net green;
+    class vis green
+
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
 <section id="dave-is-comprised-of-individual-which-can-be-linked-to-create-a-variety-of-unique-data-analysis-workflows.-global-utilities-include-data-plot-and-report-which-are-used-to-manage-data-interactively-create-plots-and-reports-from-assets-generated-with-the-data-analysis." class="level5">
 <h5 class="anchored" data-anchor-id="dave-is-comprised-of-individual-which-can-be-linked-to-create-a-variety-of-unique-data-analysis-workflows.-global-utilities-include-data-plot-and-report-which-are-used-to-manage-data-interactively-create-plots-and-reports-from-assets-generated-with-the-data-analysis.">DAVe is comprised of individual which can be linked to create a variety of unique data analysis workflows. Global Utilities include <span class="txbox_green" style="background-color: #3dbc8b !important;">Data</span>, <span class="txbox_green" style="background-color: #3dbc8b !important;">Plot</span> and <span class="txbox_green" style="background-color: #3dbc8b !important;">Report</span> which are used to manage data, interactively create plots and reports from assets generated with the data analysis.</h5>
 <p><img src="img/dave.main/basic_nav.png" class="bordered img-fluid"></p>
@@ -217,11 +278,14 @@ ul.task-list{list-style: none;}
 <h5 class="anchored" data-anchor-id="the-sidebar-is-used-to-select-analyses-methods-tune-visualizations-and-specify-report-options.">The sidebar is used to select analyses methods, tune visualizations and specify report options.</h5>
 </section>
 </section>
-<section id="c-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="c-workflow"><span class="numberCircle">C</span> <span class="txbox_blue">Workflow</span></h2>
+<section id="c-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="c-workflows"><span class="numberCircle">C</span> <span class="txbox_blue">Workflows</span></h2>
 <p><img src="img/dave.main/sub_module_nav.png" class="bordered img-fluid"></p>
 <section id="the-tabpanel-can-be-used-to-progress-through-calculate-explore-plot-and-report-analysis-steps.-the-calculate-tab-is-used-to-select-method-options-and-generate-analysis-results.-the-explore-tab-is-used-to-create-interactive-plots-to-explore-and-summarize-objects-created-in-the-calculate-tab.-the-plot-tab-is-used-to-fine-tune-visualizations-for-the-report.-the-report-tab-is-used-to-collect-all-methods-results-and-plot-settings-and-generate-a-report-summarizing-all-of-data-analysis-methods-and-results.-each-modules-reports-can-be-later-combined-and-edited-in-the-report-module." class="level5">
 <h5 class="anchored" data-anchor-id="the-tabpanel-can-be-used-to-progress-through-calculate-explore-plot-and-report-analysis-steps.-the-calculate-tab-is-used-to-select-method-options-and-generate-analysis-results.-the-explore-tab-is-used-to-create-interactive-plots-to-explore-and-summarize-objects-created-in-the-calculate-tab.-the-plot-tab-is-used-to-fine-tune-visualizations-for-the-report.-the-report-tab-is-used-to-collect-all-methods-results-and-plot-settings-and-generate-a-report-summarizing-all-of-data-analysis-methods-and-results.-each-modules-reports-can-be-later-combined-and-edited-in-the-report-module.">The tabpanel can be used to progress through <span class="txbox_green" style="background-color: #3399ff !important;">calculate</span>, <span class="txbox_green" style="background-color: #3399ff !important;">explore</span>, <span class="txbox_green" style="background-color: #3399ff !important;">plot</span> and <span class="txbox_green" style="background-color: #3399ff !important;">report</span> analysis steps. The <span class="txbox_green" style="background-color: #3399ff !important;">calculate</span> tab is used to select method options and generate analysis results. The <span class="txbox_green" style="background-color: #3399ff !important;">explore</span> tab is used to create interactive plots to explore and summarize objects created in the <span class="txbox_green" style="background-color: #3399ff !important;">calculate</span> tab. The <span class="txbox_green" style="background-color: #3399ff !important;">plot</span> tab is used to fine-tune visualizations for the <span class="txbox_green" style="background-color: #3399ff !important;">report</span>. The <span class="txbox_green" style="background-color: #3399ff !important;">report</span> tab is used to collect all methods, results and plot settings and generate a report summarizing all of data analysis methods and results. Each module’s reports can be later combined and edited in the <span class="txbox_green" style="background-color: #3dbc8b !important;">Report</span> module.</h5>
+</section>
+<section id="see-more-workflow-examples." class="level5">
+<h5 class="anchored" data-anchor-id="see-more-workflow-examples.">See more <a href="./workflows.html">workflow</a> examples.</h5>
 </section>
 </section>
 <section id="d-results" class="level2">
@@ -309,7 +373,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
