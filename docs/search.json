@@ -145,5 +145,12 @@
     "title": "Install",
     "section": "",
     "text": "Use dave.minicran to install all R packages."
+  },
+  {
+    "objectID": "partial/cytoscape_examples.html#type-2-diabetes-metabolomic-network",
+    "href": "partial/cytoscape_examples.html#type-2-diabetes-metabolomic-network",
+    "title": "9  Publication quality networks",
+    "section": "Type 2 Diabetes metabolomic network",
+    "text": "Type 2 Diabetes metabolomic network"
   }
 ]
