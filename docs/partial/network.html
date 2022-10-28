@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -44,7 +49,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../partial/dave_network_to_cytoscape.html" rel="next">
+<link href="../partial/cytoscape_examples.html" rel="next">
 <link href="../partial/model.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -111,7 +116,12 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">User Guide</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/install.html" class="sidebar-item-text sidebar-link">Install</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -127,6 +137,11 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../partial/workflows.html" class="sidebar-item-text sidebar-link">Workflows</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../partial/courses.html" class="sidebar-item-text sidebar-link">Tutorials</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,7 +186,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../partial/dave_network_to_cytoscape.html" class="sidebar-item-text sidebar-link">Publication quality networks</a>
+  <a href="../partial/cytoscape_examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Publication quality networks</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,32 +199,32 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#translate" id="toc-translate" class="nav-link active" data-scroll-target="#translate"><span class="txbox_green">Translate</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate" id="toc-calculate" class="nav-link" data-scroll-target="#calculate"><span class="txbox_gray">Calculate</span></a></li>
   </ul></li>
   <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping"><span class="txbox_green">Mapping</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate-1" id="toc-calculate-1" class="nav-link" data-scroll-target="#calculate-1"><span class="txbox_gray">Calculate</span></a></li>
   </ul></li>
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="txbox_green">Correlation</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate-2" id="toc-calculate-2" class="nav-link" data-scroll-target="#calculate-2"><span class="txbox_gray">Calculate</span></a></li>
   </ul></li>
   <li><a href="#biochemical" id="toc-biochemical" class="nav-link" data-scroll-target="#biochemical"><span class="txbox_green">Biochemical</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate-3" id="toc-calculate-3" class="nav-link" data-scroll-target="#calculate-3"><span class="txbox_gray">Calculate</span></a></li>
   </ul></li>
   <li><a href="#structural" id="toc-structural" class="nav-link" data-scroll-target="#structural"><span class="txbox_green">Structural</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate-4" id="toc-calculate-4" class="nav-link" data-scroll-target="#calculate-4"><span class="txbox_gray">Calculate</span></a></li>
   </ul></li>
   <li><a href="#enrich" id="toc-enrich" class="nav-link" data-scroll-target="#enrich"><span class="txbox_green">Enrich</span></a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#calculate-5" id="toc-calculate-5" class="nav-link" data-scroll-target="#calculate-5"><span class="txbox_gray">Calculate</span></a></li>
   <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize"><span class="txbox_gray">Visualize</span></a></li>
   </ul></li>
@@ -316,7 +331,7 @@ div.csl-indent {
 <section id="correlation" class="level3">
 <h3 class="anchored" data-anchor-id="correlation"><span class="txbox_green">Correlation</span></h3>
 <section id="this-module-is-used-to-create-and-regularized-correlation-networks-huge." class="level5">
-<h5 class="anchored" data-anchor-id="this-module-is-used-to-create-and-regularized-correlation-networks-huge.">This module is used to create and <code>regularized</code> <code>correlation</code> networks <span class="citation" data-cites="huge">(<a href="../references.html#ref-huge" role="doc-biblioref"><strong>huge?</strong></a>)</span>.</h5>
+<h5 class="anchored" data-anchor-id="this-module-is-used-to-create-and-regularized-correlation-networks-huge.">This module is used to create and <code>regularized</code> <code>correlation</code> networks <span class="citation" data-cites="huge">Jiang et al. (<a href="../references.html#ref-huge" role="doc-biblioref">2019</a>)</span>.</h5>
 </section>
 <section id="calculate-2" class="level4">
 <h4 class="anchored" data-anchor-id="calculate-2"><span class="txbox_gray">Calculate</span></h4>
@@ -332,7 +347,7 @@ div.csl-indent {
 <div class="columns">
 <div class="column">
 <section id="select-regularizationm-method-based-on-rotation-information-criterion-ric-stability-approach-to-regularization-selection-stars-or-extended-bayesian-information-criterion-ebic-huge.-note-you-can-also-manually-select-the-regularization-lambda-higher-lambda-is-more-strict-but-this-needs-to-be-done-after-a-model-is-calculated.-if-no-edges-are-returned-using-manual-then-try-a-lowe-or-less-stict-regularization." class="level5">
-<h5 class="anchored" data-anchor-id="select-regularizationm-method-based-on-rotation-information-criterion-ric-stability-approach-to-regularization-selection-stars-or-extended-bayesian-information-criterion-ebic-huge.-note-you-can-also-manually-select-the-regularization-lambda-higher-lambda-is-more-strict-but-this-needs-to-be-done-after-a-model-is-calculated.-if-no-edges-are-returned-using-manual-then-try-a-lowe-or-less-stict-regularization.">Select regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic) <span class="citation" data-cites="huge">(<a href="../references.html#ref-huge" role="doc-biblioref"><strong>huge?</strong></a>)</span>. Note you can also manually select the regularization <code>lambda</code> (higher lambda is more strict), but this needs to be done after a model is calculated. If no edges are returned using <code>manual</code> then try a lowe or less stict regularization.</h5>
+<h5 class="anchored" data-anchor-id="select-regularizationm-method-based-on-rotation-information-criterion-ric-stability-approach-to-regularization-selection-stars-or-extended-bayesian-information-criterion-ebic-huge.-note-you-can-also-manually-select-the-regularization-lambda-higher-lambda-is-more-strict-but-this-needs-to-be-done-after-a-model-is-calculated.-if-no-edges-are-returned-using-manual-then-try-a-lowe-or-less-stict-regularization.">Select regularizationm method based on rotation information criterion (ric), stability approach to regularization selection (stars) or extended Bayesian information criterion (ebic) <span class="citation" data-cites="huge">Jiang et al. (<a href="../references.html#ref-huge" role="doc-biblioref">2019</a>)</span>. Note you can also manually select the regularization <code>lambda</code> (higher lambda is more strict), but this needs to be done after a model is calculated. If no edges are returned using <code>manual</code> then try a lowe or less stict regularization.</h5>
 </section>
 </div><div class="column">
 <p><img src="img/dave.network/corrmap/reg_methods.png" class="bordered img-fluid"></p>
@@ -490,8 +505,8 @@ div.csl-indent {
 </div>
 <div class="columns">
 <div class="column">
-<section id="create-idynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest." class="level5">
-<h5 class="anchored" data-anchor-id="create-idynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest.">Create <code>idynamic</code> plots which highlight node connections, on hover annotations, moving nodes and look up of nodes of interest.</h5>
+<section id="create-dynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest." class="level5">
+<h5 class="anchored" data-anchor-id="create-dynamic-plots-which-highlight-node-connections-on-hover-annotations-moving-nodes-and-look-up-of-nodes-of-interest.">Create <code>dynamic</code> plots which highlight node connections, on hover annotations, moving nodes and look up of nodes of interest.</h5>
 </section>
 </div><div class="column">
 <p><img src="img/dave.network/visualize/plot_dynamic.png" class="bordered img-fluid"></p>
@@ -502,6 +517,9 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-p_adjust_BH" class="csl-entry" role="doc-biblioentry">
 Benjamini, Y., and Y. Hochberg. 1995. <span>“Controlling the False Discovery Rate - a Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society Series B-Methodological</em> 57 (1): 289–300.
+</div>
+<div id="ref-huge" class="csl-entry" role="doc-biblioentry">
+Jiang, Haoming, Xinyu Fei, Han Liu, Kathryn Roeder, John Lafferty, Larry Wasserman, Xingguo Li, and Tuo Zhao. 2019. <em>Huge: High-Dimensional Undirected Graph Estimation</em>. <a href="https://CRAN.R-project.org/package=huge">https://CRAN.R-project.org/package=huge</a>.
 </div>
 </div>
 </section>
@@ -577,7 +595,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -612,8 +631,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../partial/dave_network_to_cytoscape.html" class="pagination-link">
-        <span class="nav-page-text">Publication quality networks</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../partial/cytoscape_examples.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Publication quality networks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
